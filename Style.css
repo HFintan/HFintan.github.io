@@ -17,10 +17,8 @@ img { border:none; }
 body {
 	margin:0;
 	padding:0;
-/*
-	background-color:rgb(150,255,150);
-*/
-	background-color:#0489B1 /*#6D7B8D;*/
+
+	background-color:#0489B1
 	background-color:*#25383C;
 	background-color:rgb(160,180,160) ;
 	color:#333;
@@ -30,10 +28,10 @@ body {
 #container {
 	width:960px;
 	margin:auto;
-/*
-	background-color:rgb(150,255,150);	
-*/
-	background-color:#0489B1/*#6D7B8D*/;	
+
+        background-image: url(images/whiteboard.png);
+
+	background-color:#0489B1;	
 	background-color:rgb(160,180,160) ;
 	font-size:14px;
 	position: relative;
@@ -51,13 +49,13 @@ body {
 
 }	
 #banner {
-	color:#FFFFFF;
+	color:#000000;
 	color:#GGG;
 	padding:20px;
 	
 	background-color:#6D7B8D;
 	margin:0;
-	background-image: url(images/guitarneck2.png);
+	background-image: url(images/line.png);
 }
 h1 {
 	margin:0;
@@ -103,6 +101,7 @@ h1 {
    color:#333;
 }
 #page {
+
 	background-color:#FFF;
 	overflow:auto;
 	padding:15px 0;
