@@ -115,7 +115,7 @@ gap> View(A);</b></tt><br> The "250" is an RGB threshold value, dictating which 
 gap> for i in [1..PathComponent(A,0)] do<br>
 > if EulerCharacteristic(PathComponent(A,i))=0 then<br>
 > B:=PureComplexUnion(B,PathComponent(A,i));;<br>
-> fi; od; <br></b><tt>
+> fi; od; <br></b></tt>
 </div>
 
 <div> <img style="width:300px; height: 224px; float: left; padding:10px" src="images/photogap3.jpg"/> Washers and nuts are homotopy equivalent - both contain exactly one hole. However, the nuts have some corners, which are not found on the smooth boundary of the washers. The function <tt><b>Singularities</b></tt> identifies these corners, with two threshold values (in this case 5 and 50) defining what we are regarding as a "corner".<br>
@@ -123,7 +123,7 @@ gap> for i in [1..PathComponent(A,0)] do<br>
 gap> for i in [1..PathComponent(B,0)] do<br>
 > if Size(Singularities(PathComponent(B,i),5,50)=0 then<br>
 > C:=Union(C,PathComponent(B,i));;<br>
-> fi;od;</b><tt>
+> fi;od;</b></tt>
 </div>
 <br><br>
 
@@ -142,8 +142,8 @@ gap> for i in [1..PathComponent(C,0)] do <br>
 </div>
 
 <br><br><br><br>
-See the pdf of my "Computation of persistent Betti numbers using cubical and permutahedral complexes" presentation for a nice example illustrating homology estimation from a sample of data, and persistent homology.
-The pdf of my viva explains the contraction methods the software uses.
+See the pdf of my "Computation of persistent Betti numbers using cubical and permutahedral complexes" presentation for a nice example illustrating homology estimation from a sample of data, and persistent homology.<br>
+The pdf of my viva presentation explains the contraction methods the software uses.
 
 </div>
 </div>
