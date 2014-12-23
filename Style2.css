@@ -2,6 +2,9 @@
 /* CSS Document */
 
 body {
+  .column-left{ float: left; width: 33%; }
+.column-right{ float: right; width: 33%; }
+.column-center{ display: inline-block; width: 33%; }
   padding-left: 11em;
   font-family: Georgia, "Times New Roman",
         Times, serif;
