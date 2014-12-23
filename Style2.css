@@ -15,6 +15,7 @@ ul.navbar {
   top: 2em;
   left: 1em;
   width: 9em }
+  #styledimg { background-image: url(/images/kalogo.png); background-repeat: no-repeat; width: 10px; height: 20px; }
 h1 {
   font-family: Helvetica, Geneva, Arial,
         SunSans-Regular, sans-serif }
