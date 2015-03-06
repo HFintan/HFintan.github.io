@@ -1,74 +1,112 @@
-<!DOCTYPE html>
-<html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="index.html : A Site For The Web." />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Research</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<link href="Style.css" rel="stylesheet" media="screen" />
+<script type="text/JavaScript" src="curvycorners.js"></script>
+</head>
+	
+<body>
+<div id="container">
+<div id="wrapper">
+<div id="banner">
+<h1>Fintan Hegarty</h1>
+<p>Research: Computational Homology<br />
+</p>
+</div>
+<div id="nav">
+<ul>
+<li><a href="index.html"><big>Home</big></a></li>
+<li><a href="research.html"><big>Research</big></a></li>
+<li><a href="teaching.html"><big>Teaching</big></a></li>
+<!--<li><a href="stop.html"><big> Other </big></a></li>-->
+</ul>
+</div>
+<div id="page"><div id="content">
 
-    <title>index.html</title>
-  </head>
+<big><span style="font-weight: bold;">A couple of toy examples</span></big>
+<br><br>
+Suppose you have a block of Maasdam, and want to know how many tunnels there are running through the cheese, and how many voids or 'bubbles' are contained therein.
+<br>
+<center><img style="width: 500px; height: 300px;" src="images/originalcheese.jpg";"/></center>
+<br><br>
 
-  <body>
+Using highly sophisticated methods we can convert this three-dimensional object into a sequence of two-dimensional slices...
+<br>
+<center><img style="width: 500px; height: 300px;" src="images/cheesewithknife.jpg";"/></center>
+<br><br>
+<center><img style="width: 150px; height: 251px;" src="images/shrunkcheese1.jpg";"/><img style="width: 150px; height: 251px;" src="images/shrunkcheese2.jpg";"/><img style="width: 150px; height: 251px;" src="images/shrunkcheese3.jpg";"/></center>
+<br><br>
+And then read these into the computer...
+<center><img style="width: 150px; height: 251px;" src="images/usegappedcheese1.jpg";"/><img style="width: 150px; height: 251px;" src="images/usegappedcheese2.jpg";"/><img style="width: 150px; height: 251px;" src="images/usegappedcheese3.jpg";"/></center>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/HFintan">View on GitHub</a>
+The following series of GAP commands provide some information about the original block of cheese. The <tt>Size</tt> function returns the number of coloured voxels in our data set, and the two <tt>ContractedComplex</tt> functions reduce the size of the data set but, crucially, do <i>not</i> change the number of components, holes, tunnels, or voids in the data set.
+<br><tt><b>gap> X:=ReadImageSequence([threecheeseslices]);;<br>
+gap> Size(X);<br>
+441922<br>
+gap> ContX:=ContractedComplex(X);;time;<br>
+10 seconds<br>
+gap> Size(ContX);<br>
+6208<br>
+gap> ZZContX:=ZigZagContractedComplex(ContX);;time;<br>
+22 seconds<br>
+gap> Size(ZZContX);<br>
+1042<br>
+gap> Bettinumbers(ZZContX);time;<br>
+[1,9,1,0]<br>
+5 seconds</b></tt>
+<br>
+These Bettinumbers tell us that our initial block of cheese was a single connected object, had 9 tunnels running through it, and had 1 "bubble" inside it.
+<br><br><br>
 
-          <h1 id="project_title">index.html</h1>
-          <h2 id="project_tagline">A Site For The Web.</h2>
+<div class="container">
+	<img class="floatleft" style="width: 300px; height: 224px; float:left; padding:10px" src="images/photo3.jpg"/>
+	<img class="floatright" style="width: 300px; height: 224px; float:right; padding:5px" src="images/photogap1.jpg";/>
+	<div class="txt"">
+	<p> <br>In this example, we are presented with a selection of nuts, bolts and washers, and use our software to distinguish between them.<br>
+<tt><b>gap> A:=ReadImage("bits.jpg",250);;<br>
+gap> View(A);</b></tt><br> The "250" is an RGB threshold value, dictating which pixels should be deemed "present" in the data set.</p>
+</div>
+</div>
+<br><br>
 
-        </header>
-    </div>
+<div> <img style="width: 300px; height: 224px; float:right; padding:10px" src="images/photogap2.jpg"/> Here we create a copy of the image without bolts, by creating an empty image of the same size and then adding in all of the objects with Euler characteristic 0. Any object which is homotopy equivalent to a circle will have Euler characteristic 0 - ie. this includes washers and nuts, but not bolts. The <tt><b>PathComponent(A,n)</b></tt> function selects the <i>n</i>th object in the data set <b>A</b>, except where n=0, in which case the function returns the number of separate objects in <b>A</b>.<br>
+<tt><b>gap> B=PureComplex(A!.binaryArray*0);;<br>
+gap> for i in [1..PathComponent(A,0)] do<br>
+> if EulerCharacteristic(PathComponent(A,i))=0 then<br>
+> B:=PureComplexUnion(B,PathComponent(A,i));;<br>
+> fi; od; <br></b></tt>
+</div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<div> <img style="width:300px; height: 224px; float: left; padding:10px" src="images/photogap3.jpg"/> Washers and nuts are homotopy equivalent - both contain exactly one hole. However, the nuts have some corners, which are not found on the smooth boundary of the washers. The function <tt><b>Singularities</b></tt> identifies these corners, with two threshold values (in this case 5 and 50) defining what we are regarding as a "corner".<br>
+<tt><b>gap> C:=PureComplex(B!.binaryArray*0);;<br>
+gap> for i in [1..PathComponent(B,0)] do<br>
+> if Size(Singularities(PathComponent(B,i),5,50)=0 then<br>
+> C:=Union(C,PathComponent(B,i));;<br>
+> fi;od;</b></tt>
+</div>
+<br><br>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<div class="container">
+	<img class="floatright" style="width: 300px; height: 224px; float:right; padding:10px" src="images/photogap4.jpg";/>
+	<div class="txt"">
+	<p> If we intuitively "thicken" the remaining objects, we might expect that the holes in some will disappear before others. We can thus, by monitoring the Euler characteristic of the objects, identify the washers by size. The "7" here was chosen because it gave the clearest results for this example, but is of no other particular significance.
+<br><tt><b>gap> D:=PureComplex(C!.binaryArray*0);;<br>
+gap> for i in [1..PathComponent(C,0)] do <br>
+> p:=Thickened(PathComponent(C,i));<br>
+> for j in [1..7] do p:=Thickened(p);;<br>
+> if EulerCharacteristic(p)=0 then<br>
+> D:=Union(D,PathComponent(C,i));;<br>
+> fi;od;od;<br></b></tt></p>
+</div>
+</div>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<br><br><br><br>
+See my <a href="pdfs/blitzpresentation.pdf"><i>"Computation of persistent Betti numbers using cubical and permutahedral complexes"</i></a> presentation for a nice example illustrating homology estimation from a sample of data, and persistent homology.<br>
+My <a href="pdfs/presentation.pdf"> viva presentation </a> explains the contraction methods the software uses.
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+</div>
+</div>
+</body></html>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
