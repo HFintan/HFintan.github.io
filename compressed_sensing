@@ -1,0 +1,67 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Research: Compressed Sensing</title>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Fintan Hegarty</title>
+	<link href="Style.css" rel="stylesheet" media="screen" />
+	<script type="text/JavaScript" src="curvycorners.js"></script>
+</head>
+
+<body>
+<div id="container">
+<div id="wrapper">
+<div id="banner">
+<h1>Fintan Hegarty</h1>
+<p>Research: Compressed Sensing<br />
+<p><br />
+</p>
+</div>
+<div id="nav">
+<ul>
+<li><a href="index.html"><big>Home</big></a></li>
+<li><a href="research.html"><big>Research</big></a></li>
+<li><a href="teaching.html"><big>Teaching</big></a></li>
+<!--<li><a href="stop.html"><big> Eile </big></a></li>-->
+<!--<li><a href="index.html"><big>English version</big></a></li>-->
+</ul>
+</div>   
+<div id="page">
+<div id="content">
+
+The idea behind compressed sensing concerns the compression of a vector x into a smaller vector y=Ax via an m x n matrix A where
+<br> m << n , and the subsequent recovery of x from y and A. This system is underdetermined - there are infinitely many solutions
+<br> to y=Ax. However, for k-sparse vectors x (ie. x contains at most k non-zero entries) it turns out that we can solve y=Ax
+<br> if A has certain properties, as detailed by Candés, Donoho, and Tao.
+<br>
+<br>
+In my paper with Ó Catháin and Zhao, we analyse the effect of the sparsification of A on its recovery capabilities. The matrix
+<br> A is said to be sparsified by p% if we randomly assign p% of its non-zero entries to have value 0. Unsurprisingly, computations
+<br> for sparsified matrices are much faster, but, perhaps surprisingly, the recovery with sparisified matrices all seems to offer
+<br> an improvement.
+<br>
+<br>
+In the graph below, we illustrate the relative recovery of matrices under varying levels of sparsification. <br>
+The table below provides the interesting section of the data which was used to generate the graph.
+
+<img src="https://cloud.githubusercontent.com/assets/4904401/6500414/549da1b0-c303-11e4-979b-6977018992f2.png" height="300"/>
+<br>
+<style type="text/css">
+	table.tableizer-table {
+	border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+} 
+.tableizer-table td {
+	padding: 4px;
+	margin: 3px;
+	border: 1px solid #ccc;
+}
+.tableizer-table th {
+	background-color: #104E8B; 
+	color: #FFF;
+	font-weight: bold;
+}
+</body></html> 
+
