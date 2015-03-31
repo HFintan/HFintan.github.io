@@ -58,13 +58,14 @@ If you wish to run similar experiments yourself, the Matlab files used to genera
 <li><a href="sparsifyingMat.m">Sparsifying Mat</a></li>
 
 and the parameters were
-<b>Sp=sparsitySuccessTest(200,2000,'N',[1,0.1,0.05],1,60,500);</b> where
+<b>generateSparsitySuccessTestGraph(200,2000,'N',[1,0.1,0.05],1,60,500);</b> where
 <ul>
 <li>200x2000 are the dimensions of the matrices we consider</li>
 <li>'N' indicates that the entry values in the matrices are normally distributed (though we then take the absolute value)</li> 
 <li>[1,0.1,0.05] are the sparsification levels we test - 1 being the original matrix and 0.05 containing 95% zero entries</li>
 <li>1 and 60 are the lower and upper bounds on the sparsity of the signal</li>
 <li>500 is the number of iterations over each matrix sparsity level</li>
+(Data is sent to sparsitySuccessTestGraphData.txt by default)
 </ul>
 
 <!--<img src="https://cloud.githubusercontent.com/assets/4904401/6500414/549da1b0-c303-11e4-979b-6977018992f2.png" height="300"/>
