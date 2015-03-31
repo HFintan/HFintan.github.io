@@ -43,9 +43,13 @@ In my paper with Ó Catháin and Zhao, we analyse the effect of the sparsificati
 <br> an improvement.
 <br>
 <br>
-In the graph below, we illustrate the relative recovery of matrices under varying levels of sparsification. <br>
+The graph below is a motivational figure from our paper. It is clear that the sparsified matrices outperform the original matrix. <br>
 
-The Matlab functions used to generate this data are:
+<img src="https://cloud.githubusercontent.com/assets/4904401/6910681/45d76454-d74e-11e4-92a7-4b574759d38c.png" height="300"/>
+
+
+
+If you wish to re-run this experiment yourself and generate your own data, the Matlab functions needed to generate this data are:
 <li><a href="sparsitySuccessTest.m">Sparsity Success Test</a></li>
 <li><a href="testOneMat.m">Test One Mat</a></li>
 <li><a href="normalizeMat.m">Normalize Mat</a></li>
@@ -53,6 +57,15 @@ The Matlab functions used to generate this data are:
 <li><a href="randomKSparseVector.m">Random k-sparse vector</a></li>
 <li><a href="generateMat.m">Generate Mat</a></li>
 <li><a href="sparsifyingMat.m">Sparsifying Mat</a></li>
+
+The command we used to produce the above graph was
+<b>Sp=sparsitySuccessTest(200,2000,'N',[1,0.1,0.05],1,60,500);</b> where <br>
+200x2000 are the dimensions of the matrices we consider,<br> 
+'N' indicates that the entry values in the matrices are normally distributed (though we then take the absolute value),<br> 
+[1,0.1,0.05] are the sparsification levels we test - 1 being the original matrix and 0.05 containing 95% zero entries<br>
+1 and 60 are the lower and upper bounds on the sparsity of the signal,<br>
+and 500 is the number of iterations over each matrix sparsity level.<br>
+
 
 <!--<img src="https://cloud.githubusercontent.com/assets/4904401/6500414/549da1b0-c303-11e4-979b-6977018992f2.png" height="300"/>
 <br>
