@@ -37,19 +37,18 @@ The idea behind compressed sensing concerns the compression of a vector x into a
 <br> if A has certain properties, as detailed by Candés, Donoho, and Tao.
 <br>
 <br>
-In my paper with Ó Catháin and Zhao, we analyse the effect of the sparsification of A on its recovery capabilities. The matrix
-<br> A is said to be sparsified by p% if we randomly assign p% of its non-zero entries to have value 0. Unsurprisingly, computations
-<br> for sparsified matrices are much faster, but, perhaps surprisingly, the recovery with sparisified matrices all seems to offer
-<br> an improvement.
+In my paper with Ó Catháin and Zhao, we analyse the effect of the sparsification of the sensing matrix A on its recovery capabilities. The matrix
+<br> A is said to be sparsified if we set all its values, bar a proportion \delta, to have value 0. Unsurprisingly, computations
+<br> for sparsified matrices are much faster, but the recovery capablities of sensing matrices also seems to improve when they have been sparsified.
 <br>
 <br>
-The graph below is a motivational figure from our paper. It is clear that the sparsified matrices outperform the original matrix. <br>
+The graph below is a motivational figure from our paper. It is clear that the sparsified matrices (\delta=0.05 and 0.1) outperform the original matrix (\delta=1). <br>
 
 <img src="https://cloud.githubusercontent.com/assets/4904401/6910681/45d76454-d74e-11e4-92a7-4b574759d38c.png" height="300"/>
 
+This graph was generated using <li><a href="MakingFig1.m">MakingFig1 Matlab file</a></li> and the data in this <li><a href="Fig1Data.txt"> Fig1Data .txt file</a></li>. <br>  
 
-
-If you wish to re-run this experiment yourself and generate your own data, the Matlab functions needed to generate this data are:
+If you wish to run similar experiments yourself, the Matlab files used to generate the above data are:<br>
 <li><a href="sparsitySuccessTest.m">Sparsity Success Test</a></li>
 <li><a href="testOneMat.m">Test One Mat</a></li>
 <li><a href="normalizeMat.m">Normalize Mat</a></li>
