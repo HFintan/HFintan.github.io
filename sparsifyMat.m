@@ -7,9 +7,9 @@
 
 function SparseMat = sparsifyMat(DENSE_MAT, PROPORTION);
         if PROPORTION==1
-            Mat=DENSE_MAT;
+            SparseMat=DENSE_MAT;
         else
         [Rows, Cols] = size(DENSE_MAT);
         CoefficientMat = sparsifyingMat(Rows, Cols, PROPORTION);
-        Mat = DENSE_MAT .* CoefficientMat;             % Pointwise product.
+        SparseMat = DENSE_MAT .* CoefficientMat;             % Pointwise product.
         end
