@@ -8,7 +8,7 @@ function OneMatIter = testOneMat(ROWS, COLS, MAT_TYPE, SPARSITY_LIST, VEC_SPARSI
 [T,DenseMat]=evalc('generateMat(MAT_TYPE, ROWS, COLS)');
 ResultsVec=zeros(1, size(SPARSITY_LIST,2));
 for i=1:size(SPARSITY_LIST, 2)
-    SparseMat=normalizeMat(sparsifyMat(DenseMat, SPARSITY_LIST(i)));
+    SparseMat=sparsifyMat(DenseMat, SPARSITY_LIST(i));
     Vec=randomKSparseVector(VEC_SPARSITY, COLS);
     LowVecVals=zeros(COLS, 1);
     UppVecVals=ones(COLS, 1);
@@ -16,8 +16,11 @@ for i=1:size(SPARSITY_LIST, 2)
     [T,GuessVec]=evalc('linprog(ObjectiveFunction, [], [], SparseMat, SparseMat*Vec, LowVecVals, UppVecVals)');
         % The [],[] here indicate that we are not seeking inequalities.
 %    [T,GuessVec]=evalc('OMP(SparseMat, SparseMat*Vec, 10^-6, [])');
-%    [T,GuessVec]=evalc('CoSaMP(SparseMat,SparseMat*Vec,60,[])');
+%tic
+%    [T,GuessVec]=evalc('CoSaMP(SparseMat,SparseMat*Vec,VEC_SPARSITY,[])');
+%toc
     ResultsVec(i)=((norm(Vec-GuessVec, 1))<10^-6);
+
 end
 
 OneMatIter=ResultsVec;
