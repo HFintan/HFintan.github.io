@@ -36,13 +36,13 @@ The idea behind compressed sensing concerns the compression of a vector x into a
 <br> to y=Ax. However, for k-sparse vectors x (ie. x contains at most k non-zero entries) it turns out that we can solve y=Ax
 <br> if A has certain properties, as detailed by Candés, Donoho, and Tao.
 <br>
+<br><b>Definition:</b> If &#934; and &#934;' are matrices such that &#934;'<sub>i,j</sub>=&#934;<sub>i,j</sub> for every non-zero entry
+of &#934;', then we say that &#934;' is a <i>sparsification</i> of &#934;.<br>
+The density of &#934;, &#948;(&#934;) is the proportion of non-zero entries which &#934; contains.<br> 
 <br>
-In my paper with Ó Catháin and Zhao, we analyse the effect of the sparsification of the sensing matrix A on its recovery capabilities. The matrix
-A is said to be sparsified if we set all its values, bar a proportion &delta;, to have value 0. Unsurprisingly, computations
-<br> for sparsified matrices are much faster, but the recovery capablities of sensing matrices also seem to improve when they have been sparsified.
+In my paper with Ó Catháin and Zhao, we analyse the effect of the sparsification of the sensing matrix &#934; on its recovery capabilities.
 <br>
-<br>
-The graph below is a motivational figure from our paper. It is clear that the sparsified matrices (&delta;=0.05 and 0.1) outperform the original matrix (&delta;=1). <br>
+The graph below is a motivational figure from our paper. It shows that the sparsified matrices (&delta;=0.05 and 0.1) outperform the original matrix (&delta;=1). <br>
 
 <img src="https://cloud.githubusercontent.com/assets/4904401/6910681/45d76454-d74e-11e4-92a7-4b574759d38c.png" height="300"/><br>
 
@@ -71,6 +71,12 @@ and the parameters were
 <br><br><br>
 <h2>Speed</h2>
 
+In the two graphs below, we examine the effect of sparsification on the run-time of the algorithm. For a range of vector sparsities,
+we timed 100 recovery attempts from 200x2000 sensing matrices, using both the standard linear programming solver in Matlab, and the 
+specialised CoSaMP algorithm developed by Needell and Tropp.
+We see that CoSaMP is significantly faster than the linear programming solver, and that the sparsified matrices recover noticeably
+more vectors than the unsparsified ones. The unsparsified CoSaMP is slightly faster in some places - accounted for by the fraction
+of a second it takes to sparsify a matrix, but the enormous improvement in recovery shows that sparsification is worthwhile.
 <img border="”"-100" src="https://cloud.githubusercontent.com/assets/4904401/7548132/17c52d4c-f5f5-11e4-882b-24c5c335aa86.png" width="900" />
 <img border="-100" src="https://cloud.githubusercontent.com/assets/4904401/7548227/396592a8-f5f9-11e4-8b0a-0435198aaa9b.png" width="900" />
 
