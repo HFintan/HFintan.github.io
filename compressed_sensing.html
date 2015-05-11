@@ -87,11 +87,11 @@ The main algorithms we used to generate the data for our paper are contained in 
 <li><a href="randomKSparseVector.m">randomKSparseVector</a></li> This algorithm generates the k-sparse vectors used in our
 simulations. For clarity, in all experiments used to generate data for the paper, the non-zero entries are drawn from a
 uniform distribution on the open interval. However, varying the distribution from which these entries are drawn still produces
-data which bolsters the case for sparsification of the sensing matrices.
+data which bolsters the case for sparsification of the sensing matrices.<br><br>
 
 <li><a href="generateMat.m">generateMat</a></li> This algorithm is used to generate our original matrices - the unsparsified
 versions - from arguments corresponding to size and the distribution from which the entries were drawn. All matrices, and
-vectors, are normalised upon construction.
+vectors, are normalised upon construction.<br><br>
 
 <li><a href="testOneMat.m">testOneMat</a></li> This algorithm takes, as its arguments, the parameters required to generate a
 matrix and a vector, and also a list of densities (corresponding to the desired levels of sparsification). A matrix is created,
@@ -99,21 +99,21 @@ and then a sparsification thereof for each entry in the list of densities. Then,
 a random k-sparse vector <i>v</i> is created and a recovery algorithm employed to attempt to recover <i>v</i> from <i>&#934;v</i>
 and <i>&#934;</i>. A list of 0s (failures) and 1s (successes) is returned, with one entry corresponding to the recovery attempt
 for each sparsification. A recovery is deemed successful if the norm of the estimated vector differs from <i>v</i> by less than
-10<sup>-6</sup></i>.
+10<sup>-6</sup></i>.<br><br>
 
 <li><a href="sparseCoefficientMat.m">sparseCoefficientMat</a></li> This algorithm creates a matrix of a given size, where
-some given proportion of the entries in each column are randomly assigned to have value 1 and the rest are 0.
+some given proportion of the entries in each column are randomly assigned to have value 1 and the rest are 0.<br><br>
 
 <li><a href="sparsifyMat.m">sparsifyMat</a></li> This algorithm returns a sparsification of the inputted matrix, whose density
 is some user-specified value between 0 and 1, created by taking an entrywise product of the inputted matrix with a
-sparseCoefficientMat.
+sparseCoefficientMat.<br><br>
 
 <li><a href="findRx.m">findRx</a></li> This function finds <i>R<sub>x</sub></i> for a given matrix size and density, ie. the
 maximum value <i>k</i> for which we can say with <i>x%</i> certainty that our recovery algorithm will successfully recover a
-<i>k</i>-sparse vector. Throughout the paper, we used <i>x=98%</i>.
+<i>k</i>-sparse vector. Throughout the paper, we used <i>x=98%</i>.<br><br>
 
 <li><a href="sparsitySuccessTest.m">sparsitySuccessTest</a></li> For each of an inputted range of vector sparsities and matrix
-and matrix densities, this test returns the number of successful recoveries over a given number of iterations.
+and matrix densities, this test returns the number of successful recoveries over a given number of iterations.<br>
 
 
 <!--<table><tbody>
