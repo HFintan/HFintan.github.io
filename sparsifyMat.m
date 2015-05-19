@@ -10,11 +10,13 @@ function SparseMat = sparsifyMat(DENSE_MAT, PROPORTION);
             SparseMat=DENSE_MAT;
         else
             [Rows, Cols] = size(DENSE_MAT);
-            CoefficientMat = sparsifyingMat(Rows, Cols, PROPORTION);
+            CoefficientMat = sparseCoefficientMat(Rows, Cols, PROPORTION);
             SparseMat = DENSE_MAT .* CoefficientMat;             % Pointwise product.
         end
 Cols=size(SparseMat,2);
+
 for c=1:Cols
-    SparseMat(:,c)=SparseMat(:,c)/norm(SparseMat(:,c));
-end
+    if sum(abs(SparseMat(:,c)))>0
+        SparseMat(:,c)=SparseMat(:,c)/norm(SparseMat(:,c));
+    end
 end
