@@ -1,12 +1,12 @@
-function Fig1Graph=generateSparsitySuccessTestGraph(ROWS, COLS, MAT_TYPE, SPARSITY_LIST, LOW_K, UPP_K, ITER)
-%Sparsity list must be of length 3 for the moment. I'm working on it...
+function Fig1Graph=generateSparsitySuccessTestGraph(ROWS, COLS, MAT_TYPE, SPARSITY_LIST, LOW_K, UPP_K, ITER,ALG)
+%Sparsity list must be of length 3 for the moment.
 if size(SPARSITY_LIST,2)==3
-    Sp=sparsitySuccessTest(ROWS, COLS, MAT_TYPE, SPARSITY_LIST, LOW_K, UPP_K, ITER);
+    Sp=sparsitySuccessTest(ROWS, COLS, MAT_TYPE, SPARSITY_LIST, LOW_K, UPP_K, ITER,ALG);
     fid=fopen('sparsitySuccessTestGraphData.txt','w');
     fprintf(fid,'%d %d %d \n',Sp);
     fclose(fid);
 
-    Sp=Sp*(100/ITER) % Do I need to transpose? No - because I'm not reading it in.
+    Sp=Sp*(100/ITER)
     A=LOW_K:UPP_K;
     B1=Sp(:,1);
     C2=Sp(:,2);
@@ -23,7 +23,7 @@ if size(SPARSITY_LIST,2)==3
     axis([LOW_K,UPP_K,0,110]); % This can be varied to suit scale/size. [xmin,ymin,xmax,ymax]
     xlabel('Sparsity of signal vector','FontSize',16);
     ylabel('% of signal vectors recovered','FontSize',16);
-    legend('\delta=firstSparsity','\delta=secondSparsity','\delta=thirdSparsity','Position',rect); %These also need fixing. I'll get there...
+    legend('\delta=firstSparsity','\delta=secondSparsity','\delta=thirdSparsity','Position',rect); %These also need fixing.
 else
     display('Sorry - the size of your SPARSITY_LIST must be exactly 3... for now...');
 end
