@@ -84,7 +84,7 @@ We also include the interesting section of the table which was used to generate 
 </TABLE>
 
 
-The Matlab files used to generate the relevant data and these graphs can be found below, along with further information on
+The Matlab files used to generate the relevant data and these graphs can be found <a href="http://www.fintanhegarty.com/matlab_files">here</a>, along with further information on
 parameters etc.
 <br><br><br>
 
@@ -116,55 +116,6 @@ These timing computations were run on an Intel(R) Core(TM) i5-3570 @ 3.4GHz with
 <img border="-100" src="https://cloud.githubusercontent.com/assets/4904401/7548227/396592a8-f5f9-11e4-8b0a-0435198aaa9b.png" width="900" />
 
 <br><br><br>
-
-<h3>Relevant Matlab Files</h3>
-
-The main algorithms we used to generate the data for our paper are contained in the following Matlab files:
-
-<li><a href="randomKSparseVector.m">randomKSparseVector</a></li> This algorithm generates the k-sparse vectors used in our
-simulations. For clarity, in all experiments used to generate data for the paper, the non-zero entries are drawn from a
-uniform distribution on the open interval. However, varying the distribution from which these entries are drawn still produces
-data which bolsters the case for sparsification of the sensing matrices.<br><br>
-
-<li><a href="generateMat.m">generateMat</a></li> This algorithm is used to generate our original matrices - the unsparsified
-versions - from arguments corresponding to size and the distribution from which the entries were drawn. All matrices, and
-vectors, are normalised upon construction.<br><br>
-
-<li><a href="testOneMat.m">testOneMat</a></li> This algorithm takes, as its arguments, the parameters required to generate a
-matrix and a vector, and also a list of densities (corresponding to the desired levels of sparsification). A matrix is created,
-and then a sparsification thereof for each entry in the list of densities. Then, for each of these sparsified matrices &#934; ,
-a random k-sparse vector <i>v</i> is created and a recovery algorithm employed to attempt to recover <i>v</i> from <i>&#934;v</i>
-and <i>&#934;</i>. A list of 0s (failures) and 1s (successes) is returned, with one entry corresponding to the recovery attempt
-for each sparsification. A recovery is deemed successful if the norm of the estimated vector differs from <i>v</i> by less than
-10<sup>-6</sup></i>.<br><br>
-
-<li><a href="sparseCoefficientMat.m">sparseCoefficientMat</a></li> This algorithm creates a matrix of a given size, where
-some given proportion of the entries in each column are randomly assigned to have value 1 and the rest are 0.<br><br>
-
-<li><a href="sparsifyMat.m">sparsifyMat</a></li> This algorithm returns a sparsification of the inputted matrix, whose density
-is some user-specified value between 0 and 1, created by taking an entrywise product of the inputted matrix with a
-sparseCoefficientMat.<br><br>
-
-<li><a href="findRx.m">findRx</a></li> This function finds <i>R<sub>x</sub></i> for a given matrix size and density, ie. the
-maximum value <i>k</i> for which we can say with <i>x%</i> certainty that our recovery algorithm will successfully recover a
-<i>k</i>-sparse vector. Throughout the paper, we used <i>x=98%</i>.<br><br>
-
-<li><a href="sparsitySuccessTest.m">sparsitySuccessTest</a></li> For each of an inputted range of vector sparsities and matrix
-and matrix densities, this test returns the number of successful recoveries over a given number of iterations.<br>
-
-<!--Figure 1 was generated using this <a href="MakingFig1.m">MakingFig1 Matlab file</a> and the data in this <a href="Fig1Data.txt"> Fig1Data .txt file</a>. <br>-->
-
-A figure similar to Figure 1 can be generated using <li><a href="generateSparsitySuccessTestGraph.m">generateSparsitySuccessTestGraph</a></li>.
-The parameters used in our example were<br>
-<b>generateSparsitySuccessTestGraph(200,2000,'N',[1,0.1,0.05],30,60,500);</b> where
-<ul>
-<li>200x2000 are the dimensions of the matrices we consider</li>
-<li>'N' indicates that the entry values in the matrices are normally distributed (though we then take the absolute value)</li> 
-<li>[1,0.1,0.05] are the sparsification levels we test - 1 being the original matrix and 0.05 containing 95% zero entries</li>
-<li>30 and 60 are the lower and upper bounds on the sparsity of the signal</li>
-<li>500 is the number of iterations over each matrix sparsity level</li>
-(Data is sent to sparsitySuccessTestGraphData.txt by default)
-</ul>
 
 <!--<table><tbody>
 <!--<tr><td><img border=”5″ src="https://cloud.githubusercontent.com/assets/4904401/7548132/17c52d4c-f5f5-11e4-882b-24c5c335aa86.png" height="300" />-->
