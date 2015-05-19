@@ -1,0 +1,102 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Research: Compressed Sensing</title>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Fintan Hegarty</title>
+	<link href="Style.css" rel="stylesheet" media="screen" />
+	<script type="text/JavaScript" src="curvycorners.js"></script>
+</head>
+
+<body>
+<div id="container">
+<div id="wrapper">
+<div id="banner">
+<h1>Fintan Hegarty</h1>
+<p>Research: Compressed Sensing<br />
+<p><br />
+</p>
+</div>
+<div id="nav">
+<ul>
+<li><a href="index.html"><big>Home</big></a></li>
+<li><a href="research.html"><big>Research</big></a></li>
+<li><a href="teaching.html"><big>Teaching</big></a></li>
+<!--<li><a href="stop.html"><big> Eile </big></a></li>-->
+<!--<li><a href="index.html"><big>English version</big></a></li>-->
+</ul>
+</div>   
+<div id="page">
+<div id="content">
+
+This page contains the Matlab files used to generate the relevant data and graphs for my paper with Ó Cathain and Zhao,
+along with further information on parameters etc.
+<br><br><br>
+
+
+<li><a href="randomKSparseVector.m">randomKSparseVector</a></li> This algorithm generates the k-sparse vectors used in our
+simulations. For clarity, in all experiments used to generate data for the paper, unless otherwise specified, the non-zero entries are drawn from a
+uniform distribution on the open interval (0,1). However, varying the distribution from which these entries are drawn still produces
+data which bolsters the case for sparsification of the sensing matrices - Figure 3 of the paper, for example, used vectors
+whose entries were drawn from a normal distribution.
+<br><br>
+
+<li><a href="generateMat.m">generateMat</a></li> This algorithm is used to generate our original matrices - the unsparsified
+versions - from arguments corresponding to size and the distribution from which the entries were drawn. All matrices, and
+vectors, are normalised upon construction.<br><br>
+
+<li><a href="testOneMat.m">testOneMat</a></li> This algorithm takes, as its arguments, the parameters required to generate a
+matrix and a vector, and also a list of densities (corresponding to the desired levels of sparsification). A matrix is created,
+and then a sparsification thereof for each entry in the list of densities. Then, for each of these sparsified matrices &#934; ,
+a random k-sparse vector <i>v</i> is created and a recovery algorithm employed to attempt to recover <i>v</i> from <i>&#934;v</i>
+and <i>&#934;</i>. A list of 0s (failures) and 1s (successes) is returned, with one entry corresponding to the recovery attempt
+for each sparsification. A recovery is deemed successful if the norm of the estimated vector differs from <i>v</i> by less than
+10<sup>-6</sup></i>.<br><br>
+
+<li><a href="sparseCoefficientMat.m">sparseCoefficientMat</a></li> This algorithm creates a matrix of a given size, where
+some given proportion of the entries in each column are randomly assigned to have value 1 and the rest are 0.<br><br>
+
+<li><a href="sparsifyMat.m">sparsifyMat</a></li> This algorithm returns a sparsification of the inputted matrix, whose density
+is some user-specified value between 0 and 1, created by taking an entrywise product of the inputted matrix with a
+sparseCoefficientMat.<br><br>
+
+<li><a href="findRx.m">findRx</a></li> This function finds <i>R<sub>x</sub></i> for a given matrix size and density, ie. the
+maximum value <i>k</i> for which we can say with <i>x%</i> certainty that our recovery algorithm will successfully recover a
+<i>k</i>-sparse vector. Throughout the paper, we used <i>x=98%</i>.<br><br>
+
+<li><a href="sparsitySuccessTest.m">sparsitySuccessTest</a></li> For each of an inputted range of vector sparsities and matrix
+and matrix densities, this test returns the number of successful recoveries over a given number of iterations.<br>
+
+A figure similar to Figure 1 can be generated using <li><a href="generateSparsitySuccessTestGraph.m">generateSparsitySuccessTestGraph</a></li>.
+The parameters used in our example were<br>
+<b>generateSparsitySuccessTestGraph(200,2000,'N',[1,0.1,0.05],30,60,500);</b> where
+<ul>
+<li>200x2000 are the dimensions of the matrices we consider</li>
+<li>'N' indicates that the entry values in the matrices are normally distributed (though we then take the absolute value)</li> 
+<li>[1,0.1,0.05] are the sparsification levels we test - 1 being the original matrix and 0.05 containing 95% zero entries</li>
+<li>30 and 60 are the lower and upper bounds on the sparsity of the signal</li>
+<li>500 is the number of iterations over each matrix sparsity level</li>
+(Data is sent to sparsitySuccessTestGraphData.txt by default)
+</ul>
+
+<br>
+<style type="text/css">
+	table.tableizer-table {
+	border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+} 
+.tableizer-table td {
+	padding: 4px;
+	margin: 3px;
+	border: 1px solid #ccc;
+}
+.tableizer-table th {
+	background-color: #104E8B; 
+	color: #FFF;
+	font-weight: bold;
+}
+-->
+</body></html> 
+
