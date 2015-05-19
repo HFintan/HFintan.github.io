@@ -67,9 +67,9 @@ maximum value <i>k</i> for which we can say with <i>x%</i> certainty that our re
 <i>k</i>-sparse vector. Throughout the paper, we used <i>x=98%</i>.<br><br>
 
 <li><a href="sparsitySuccessTest.m">sparsitySuccessTest</a></li> For each of an inputted range of vector sparsities and matrix
-and matrix densities, this test returns the number of successful recoveries over a given number of iterations.<br>
+and matrix densities, this test returns the number of successful recoveries over a given number of iterations.<br><br>
 
-A figure similar to Figure 1 can be generated using <li><a href="generateSparsitySuccessTestGraph.m">generateSparsitySuccessTestGraph</a></li>.
+A figure similar to Figure 1 can be generated using <li><a href="generateSparsitySuccessTestGraph.m">generateSparsitySuccessTestGraph.m</a></li>.
 The parameters used in our example were<br>
 <b>generateSparsitySuccessTestGraph(200,2000,'N',[1,0.1,0.05],30,60,500);</b> where
 <ul>
@@ -81,7 +81,13 @@ The parameters used in our example were<br>
 (Data is sent to sparsitySuccessTestGraphData.txt by default)
 </ul>
 
+<br><br>
+A figure similar to Figure 2 can be generated using <li><a href="generateFindRxGraph.m">generateFindRxGraph.m</a></li>
+
 <br>
+<br>
+
+
 <style type="text/css">
 	table.tableizer-table {
 	border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif;
