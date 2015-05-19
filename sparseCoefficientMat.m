@@ -3,7 +3,7 @@
 % matrix whose columns are zero everywhere except in PROPORTION of their
 % rows.
 
-function CoefficientMat = sparsifyingMat(ROWS, COLS, PROPORTION)
+function CoefficientMat = sparseCoefficientMat(ROWS, COLS, PROPORTION)
 
 OnesPerColumn = ceil(ROWS*PROPORTION);
 CoefficientMat = zeros(ROWS, COLS);
