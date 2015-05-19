@@ -15,11 +15,11 @@ if type=='V'
 elseif type=='U'
     GenMat=randi([lowb,uppb],rows,cols);
 elseif type=='N'
-    GenMat=abs(randn(rows,cols)); % Note the new ABS!
+    GenMat=abs(randn(rows,cols));
 elseif type=='VP'
     GenMat=PartialCirculant(type,rows,cols);
 elseif type=='F'
-    GenMat=abs(OurFourierMat(rows)); % We assume it's got 2000 columns... And we take abs... necessary?
+    GenMat=OurFourierMat(rows);
 elseif type=='VT'
     GenMat=ToeplitzMat(type,rows,cols);
 elseif type=='UP'
