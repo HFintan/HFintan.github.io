@@ -173,11 +173,10 @@ Figure 2 illustrates this.
 <h3>Speed</h3>
 
 In the two graphs below, we examine the effect of sparsification on the run-time of the algorithm. For a range of vector sparsities,
-we timed 100 recovery attempts from 200x2000 sensing matrices, using both the standard linear programming solver in Matlab, and the 
+we timed 100 recovery attempts from 100x1000 sensing matrices, using both the standard linear programming solver in Matlab, and the 
 specialised CoSaMP algorithm developed by Needell and Tropp.
 We see that CoSaMP is significantly faster than the linear programming solver, and that the sparsified matrices recover noticeably
-more vectors than the unsparsified ones. The unsparsified CoSaMP is slightly faster in some places - accounted for by the fraction
-of a second it takes to sparsify a matrix, but the enormous improvement in recovery shows that sparsification is worthwhile.<br>
+more vectors than the unsparsified ones.<br>
 These timing computations were run on an Intel(R) Core(TM) i5-3570 @ 3.4GHz with 8GB of RAM.
 
 <img border="”"-100" src="https://cloud.githubusercontent.com/assets/4904401/10481697/59f19f10-726a-11e5-9787-be024d46a646.png" width="900" />
