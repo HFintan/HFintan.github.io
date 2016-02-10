@@ -10,8 +10,8 @@
 	<script type="text/javascript">
 function add () // The name of the function
 {
-var number1=document.getElementById("select1").value; //store the value of select1 into a variable
-var number2=document.getElementById("select2").value; // do the same with select 2
+var number1=document.getElementById("pop").value; //store the value of select1 into a variable
+var number2=document.getElementById("swipes").value; // do the same with select 2
 var total=Number(number1)+Number(number2); // Add them together 
 document.getElementById("answer").value=total; // Display the answer in the text box
 }
@@ -46,9 +46,16 @@ document.getElementById("answer").value=total; // Display the answer in the text
 <select>
 <option>Tinder Calculator</option>
 <option>Bla bla</option>
+
+<form action="demo_form.asp">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  <input type="submit" value="Submit">
+</form>
+
 	</select>
 	
-	<select id="select1">
+<!--	<select id="select1">
 	<option value="5" >Some text</option>
 	<option value="10" >Bla bla</option>
 	</select>
@@ -57,9 +64,15 @@ document.getElementById("answer").value=total; // Display the answer in the text
 	<option value="5" >Some text</option>
 	<option value="10" >Bla bla</option>
 	</select>
-
-	<input type="button" onClick="add()" value="calculate">
+-->
+<form action="demo_form.asp">
+  Population: <input type="math" name="pop"><br>
+  Number of swipes: <input type="math" name="swipes"><br>
+</form>
+	<input type="button" onClick="add()" value="Calculate">
 	<input type="text" id="answer" >
+	
+
 
 
 
