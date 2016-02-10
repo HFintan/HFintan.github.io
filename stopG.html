@@ -8,20 +8,13 @@
 	<link href="Style.css" rel="stylesheet" media="screen" />
 	<script type="text/JavaScript" src="curvycorners.js"></script>
 	<script type="text/javascript">
-	<select id="select1">
-	<option value="5" >Some text</option>
-	<option value="10" >Bla bla</option>
-	</select>
-
-	<select id="select2">
-	<option value="5" >Some text</option>
-	<option value="10" >Bla bla</option>
-	</select>
-
-	<input type="button" onClick="add()" value="calculate">
-	<input type="text" id="answer" >
-	</select>
-
+function add () // The name of the function
+{
+var number1=document.getElementById("select1").value; //store the value of select1 into a variable
+var number2=document.getElementById("select2").value; // do the same with select 2
+var total=Number(number1)+Number(number2); // Add them together 
+document.getElementById("answer").value=total; // Display the answer in the text box
+}
 	</script>
 </head>
 
@@ -53,6 +46,20 @@
 <select>
 <option>Tinder Calculator</option>
 <option>Bla bla</option>
+
+	<select id="select1">
+	<option value="5" >Some text</option>
+	<option value="10" >Bla bla</option>
+	</select>
+
+	<select id="select2">
+	<option value="5" >Some text</option>
+	<option value="10" >Bla bla</option>
+	</select>
+
+	<input type="button" onClick="add()" value="calculate">
+	<input type="text" id="answer" >
+	</select>
 
 
 
