@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Fintan Hegarty</title>
 	<link href="Style.css" rel="stylesheet" media="screen" />
-	<script type="text/JavaScript" src="curvycorners.js"></script>
+<!--	<script type="text/JavaScript" src="curvycorners.js"></script>
 	<script>
 function add () // The name of the function
 {
@@ -16,6 +16,7 @@ var total=Number(number1)+Number(number2); // Add them together
 document.getElementById(answer).value=total; // Display the answer in the text box
 }
 	</script>
+	-->
 </head>
 
 <body>
@@ -43,6 +44,22 @@ document.getElementById(answer).value=total; // Display the answer in the text b
 
 <br><br><br><br><br><br><br><br>
 
+    <p>Click the button to calculate x.</p>
+    <button onclick="myFunction()">Try it</button>
+    <br/>
+    <br/>Enter first number:
+    <input type="text" id="txt1" name="text1">Enter second number:
+    <input type="text" id="txt2" name="text2">
+    <p id="demo"></p>
+    <script>
+      function myFunction() {
+        var y = document.getElementById("txt1").value;
+        var z = document.getElementById("txt2").value;
+        var x = y + z;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+<!--
 <!--<select>-->
 <!--<option>Tinder Calculator</option>
 <option>Bla bla</option>
@@ -66,13 +83,13 @@ document.getElementById(answer).value=total; // Display the answer in the text b
 -->
 
 
-<form action="demo_form.asp">
+<!--<form action="demo_form.asp">
   Population: <input type="math" name="pop"><br>
   Number of swipes: <input type="math" name="swipes"><br>
 
 	<input type="button" onClick="add()" value="Calculate">
 	<input type="math" id="answer" >
-	
+-->	
 
 </div>
 </div>
