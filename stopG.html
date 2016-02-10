@@ -45,21 +45,33 @@ document.getElementById(answer).value=total; // Display the answer in the text b
 <br><br><br><br><br><br><br><br>
 
     <p>Click the button to calculate x.</p>
-    <button onclick="myFunction()">Try it</button>
+    <button onclick="mathstuff()">Try it</button>
     <br/>
     <br/>Enter first number:
     <input type="text" id="txt1" name="text1">Enter second number:
     <input type="text" id="txt2" name="text2">
     <p id="demo"></p>
     <script>
+    	function mathstuff() {
+    		var a = document.getElementById("txt1").value;
+    		var b = document.getElementById("txt2").value;
+    		a = Number(a)
+    		b = Number(b)
+    		if Number(b)==0 return 1
+    		return (a*b) 
+    	}
+    </script>
+    
+    <!--<script>
       function myFunction() {
         var y = document.getElementById("txt1").value;
         var z = document.getElementById("txt2").value;
         var x = Number(y) + Number(z);
         document.getElementById("demo").innerHTML = x;
       }
-    </script>
-<!--
+    </script>-->
+    
+    
 <!--<select>-->
 <!--<option>Tinder Calculator</option>
 <option>Bla bla</option>
