@@ -57,14 +57,13 @@
     	}
     </script>
     <script>
-    	function fracpow(K,N,L) {
+    	function fracpow(a,b,c) {
     		return Math.pow((a/b),c); }
     </script>
     <script>
     	function sumup(K,N) {
     		var count = 0;
-    		var whyy=fracpow(K,N,2)
-    		for (L = 0; L < K+1; L++) {count = count+L;}
+    		for (L = 0; L < K+1; L++) {count = count+L*choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L);}
     	return count;}
     </script>
         		<!--	var a = fracpow(K,N,L);
