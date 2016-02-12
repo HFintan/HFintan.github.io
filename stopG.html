@@ -73,8 +73,8 @@
 
 <script>
 	function blah(K,N,L){
-		if (L<K+1){
-    		document.getElementById("demo").innerHTML = 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches <br/>' + blah(K,N,L+1);}
+		if (L<K+1)
+    		document.getElementById("demo").innerHTML = 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches <br/>' + blah(K,N,L+1);
     		}
 </script>
 
