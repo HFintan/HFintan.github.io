@@ -36,6 +36,7 @@
     <br/><p>Click the button to calculate </p>
     <br/><button onclick="calculate()">The expected number of matches for an Adonis in your area.</button>
     <br/><button onclick="calculate2()">The probability of an Adonis getting at least one match.</button>
+    <br/><button onclick="calculate3()">The probability of an Adonis getting exactly m matches.</button>
     <p id="demo"></p>
     <script>
     function calculate(){
@@ -54,7 +55,18 @@
     		b = Number(b)
     		var x = 1-fracpow(a-b,a,b)
     		document.getElementById("demo").innerHTML=x;}
-    </script
+    </script>
+    <script>
+    function calculate3(){
+    		var a = document.getElementById("txt1").value;
+    		var b = document.getElementById("txt2").value;
+    		a = Number(a)
+    		b = Number(b)
+    		for (L = 0; L < K+1; L++) {
+    			print(choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L));
+    		document.getElementById("demo").innerHTML="Good luck!";}
+    </script>
+    
     
     <script>
     	function choose(a, b) {
