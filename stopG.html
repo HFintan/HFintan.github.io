@@ -34,9 +34,9 @@
     <br/>Population: <input type="text" id="txt1" name="text1">
     <br/>Number of Swipes: <input type="text" id="txt2" name="text2">
     <br/><p>Click the button to calculate </p>
-    <br/><button onclick="calculate()">The expected number of matches for an Adonis in your area.</button>
-    <br/><button onclick="calculate2()">The probability of an Adonis getting at least one match.</button>
-    <br/><button onclick="calculate3()">The probability of an Adonis getting exactly m matches.</button>
+    <br/><button onclick="calculate()">The expected number of matches for an undiscerning Adonis in your area.</button>
+    <br/><button onclick="calculate2()">The probability of an undiscerning Adonis getting at least one match.</button>
+    <br/><button onclick="calculate3()">The probability of an undiscening Adonis getting exactly m matches.</button>
     <p id="demo"></p>
     <script>
     function calculate(){
@@ -64,7 +64,7 @@
     		b = Number(b);
     		var llist=[];
     		for (L = 0; L < b+1; L++) {
-      			llist[L+1]=[L,choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)]};
+      			llist[L+1]=[L,choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)];
     		}
     		document.getElementById("demo").innerHTML=llist;}
 
