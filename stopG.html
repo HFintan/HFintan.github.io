@@ -65,7 +65,7 @@
     		var llist=[];
     		for (L = 0; L < b+1; L++) {
     			var listel=choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L);
-	    			llist[L+1]="[L,listel]";
+	    			llist[L+1]=[L,listel];
     		}	
 		document.getElementById("demo").innerHTML=llist;
     		}
