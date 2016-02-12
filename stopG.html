@@ -62,9 +62,9 @@
     		var b = document.getElementById("txt2").value;
     		a = Number(a);
     		b = Number(b);
-    		for (L = 0; L < b+1; L++){
-    			document.getElementById("demo").innerHTML = 'You have a '+choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)*100+ '% chance of getting exactly ' +L+ ' matches <br/>';}
-    		}
+    		{for (L = 0; L < b+1; L++)
+    			document.getElementById("demo").innerHTML = 'You have a '+choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)*100+ '% chance of getting exactly ' +L+ ' matches <br/>';
+    		}}
     </script>
     
 <!--    var output = document.getElementById('output'),
