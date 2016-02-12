@@ -46,14 +46,14 @@
     		a = Number(a)
     		b = Number(b)
     		c = Number(c)
-    		var x = fracpow(a,b,c)
+    		var x = choose(a,b)
     		document.getElementById("demo").innerHTML=x;}
     </script>
     <script>
     	function choose(a, b) {
     		if (Number(b)==0)
     			{return 1;}
-    		else {return a*mathstuff(a-1,b-1)/b}
+    		else {return a*choose(a-1,b-1)/b}
     	}
     </script>
     <script>
