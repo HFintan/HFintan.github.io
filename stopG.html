@@ -62,8 +62,8 @@
     		var b = document.getElementById("txt2").value;
     		a = Number(a)
     		b = Number(b)
-    		for (L = 0; L < K+1; L++) {
-    			print(choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L));
+    		for (L = 0; L < b+1; L++) {
+    			print(choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L));
     		document.getElementById("demo").innerHTML="Good luck!";}
     </script>
     
