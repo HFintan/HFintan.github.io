@@ -41,9 +41,11 @@
     function calculate(){
     		var a = document.getElementById("txt1").value;
     		var b = document.getElementById("txt2").value;
+    		var c = document.getElementById("txt3").value;
     		a = Number(a)
     		b = Number(b)
-    		var x = fracpow(a,b)
+    		c = Number(c)
+    		var x = fracpow(a,b,c)
     		document.getElementById("demo").innerHTML=x;}
     </script>
     <script>
