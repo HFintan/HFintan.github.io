@@ -43,15 +43,19 @@
     		var b = document.getElementById("txt2").value;
     		a = Number(a)
     		b = Number(b)
-    		var x = mathstuff(a,b)
+    		var x = fracpow(a,b)
     		document.getElementById("demo").innerHTML=x;}
     </script>
     <script>
-    	function mathstuff(a, b) {
+    	function choose(a, b) {
     		if (Number(b)==0)
     			{return 1;}
     		else {return a*mathstuff(a-1,b-1)/b}
     	}
+    </script>
+    <script>
+    	function fracpow(a,b,c)
+    		return (a/b)^c;
     </script>
     
     
