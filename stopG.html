@@ -18,13 +18,6 @@
 </div>
 <div id="nav">
 <ul>
-<li><a href="indexG.html"><big>Baile</big></a></li>
-<li><a href="researchG.html"><big>Taighde</big></a></li>
-<li><a href="teachingG.html"><big>Múinteóireacht</big></a></li>
-<li><a href="stopG.html"><big> Eile </big></a></li>
-<li><a href="stop.html"><big>English version</big></a></li>
-</ul>
-</div>   
 <div id="page">
 <div id="content">
 
@@ -73,31 +66,13 @@
 
 <script>
 	function blah(K,N,L){
-		if (L<K+1)
+		if (L<K+1){
     		document.getElementById("demo").innerHTML = 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches. <br/>' + blah(K,N,L+1);
+    		return true;}
     		else {document.getElementById("demo").innerHTML="That's all, folks!"}
-		
 	}
 </script>
 
-
-
-
-    
-<!--    var output = document.getElementById('output'),
- 
-
-for (var i=0, len=cars.length, text="You've got "+len+" cars: 
-"; i<len; i++) {
-
-    text += cars[i] + "
-";
-
-}
-
-output.innerHTML += text;-->
-<!--      	-->
-    
     <script>
     	function choose(a, b) {
     		if (Number(b)==0)
@@ -121,51 +96,6 @@ output.innerHTML += text;-->
     	return count;
     	}
     </script>
-        		<!--	var a = fracpow(K,N,L);
-    			var b = fracpow(N-K,N,K-L);
-    			count = count + L*a*b;}-->
-
-    
-    <!--<script>
-      function myFunction() {
-        var y = document.getElementById("txt1").value;
-        var z = document.getElementById("txt2").value;
-        var x = Number(y) + Number(z);
-        document.getElementById("demo").innerHTML = x;
-      }
-    </script>-->
-    
-    
-<!--<select>-->
-<!--<option>Tinder Calculator</option>
-<option>Bla bla</option>
-	</select>-->
-
-<!--<form action="demo_form.asp">-->
-<!--  First name: <input type="text" name="fname"><br>
-  Last name: <input type="text" name="lname"><br>
-  <input type="submit" value="Submit">
--->
-	
-<!--	<select id="select1">
-	<option value="5" >Some text</option>
-	<option value="10" >Bla bla</option>
-	</select>
-
-	<select id="select2">
-	<option value="5" >Some text</option>
-	<option value="10" >Bla bla</option>
-	</select>
--->
-
-
-<!--<form action="demo_form.asp">
-  Population: <input type="math" name="pop"><br>
-  Number of swipes: <input type="math" name="swipes"><br>
-
-	<input type="button" onClick="add()" value="Calculate">
-	<input type="math" id="answer" >
--->	
 
 </div>
 </div>
