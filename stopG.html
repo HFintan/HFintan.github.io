@@ -31,12 +31,10 @@
 <br><br><br><br><br><br><br><br>
 
     <br/>
-    <br/>Population:
-    <input type="text" id="txt1" name="text1">
-    <br/>Number of Swipes:
-    <input type="text" id="txt2" name="text2"> 
-    <p>Click the button to calculate </p>
-    <button onclick="calculate()">The expected number of matches for an Adonis in your area.</button>
+    <br/>Population: <input type="text" id="txt1" name="text1">
+    <br/>Number of Swipes: <input type="text" id="txt2" name="text2">
+    <br/><p>Click the button to calculate </p>
+    <br/><button onclick="calculate()">The expected number of matches for an Adonis in your area.</button>
     <p id="demo"></p>
     <script>
     function calculate(){
@@ -44,7 +42,7 @@
     		var b = document.getElementById("txt2").value;
     		a = Number(a)
     		b = Number(b)
-    		var x = sumup(a,b)
+    		var x = choose(a,b)
     		document.getElementById("demo").innerHTML=x;}
     </script>
     <script>
