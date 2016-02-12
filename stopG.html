@@ -58,14 +58,30 @@
     </script>
     <script>
     function calculate3(){
-    		var a = document.getElementById("txt1").value;
-    		var b = document.getElementById("txt2").value;
-    		a = Number(a);
-    		b = Number(b);
-    		{for (L = 0; L < b+1; L++)
-    			document.getElementById("demo").innerHTML = 'You have a '+choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)*100+ '% chance of getting exactly ' +L+ ' matches <br/>';
-    		}}
+    		var N = document.getElementById("txt1").value;
+    		var K = document.getElementById("txt2").value;
+    		N = Number(N);
+    		K = Number(K);
+		blah(K,N,0)
+    		}
     </script>
+
+<!--    		for (L = 0; L < b+1; L++)
+    			document.getElementById("demo").innerHTML = 'You have a '+choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)*100+ '% chance of getting exactly ' +L+ ' matches <br/>';
+    		}-->
+
+
+<script>
+	function blah(K,N,L){
+		if (L<K+1){
+    		document.getElementById("demo").innerHTML = 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches <br/>' + blah(K,N,L+1);}
+    		}
+	}
+</script>
+
+
+
+
     
 <!--    var output = document.getElementById('output'),
  
