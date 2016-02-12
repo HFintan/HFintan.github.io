@@ -52,14 +52,14 @@ document.getElementById(answer).value=total; // Display the answer in the text b
     <input type="text" id="txt2" name="text2">
     <p id="demo"></p>
     <script>
-    	function mathstuff() {
     		var a = document.getElementById("txt1").value;
     		var b = document.getElementById("txt2").value;
     		a = Number(a)
     		b = Number(b)
+    	function mathstuff(a, b) {
     		if (Number(b)==0)
     			{var x=1;}
-    		else {var x= a*b}
+    		else {var x = a*mathstuff(a-1,b-1)/b}
     		document.getElementById("demo").innerHTML=x;
     	}
     </script>
