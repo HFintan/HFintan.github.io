@@ -36,7 +36,7 @@
     <br/><p>Click the button to calculate </p>
     <br/><button onclick="calculate()">The expected number of matches for an undiscerning Adonis in your area.</button>
     <br/><button onclick="calculate2()">The probability of an undiscerning Adonis getting at least one match.</button>
-    <br/><button onclick="calculate3()">The probability of an undiscening Adonis getting exactly m matches.</button>
+    <br/><button onclick="calculate3()">The probability of an undiscerning Adonis getting exactly m matches.</button>
     <p id="demo"></p>
     <script>
     function calculate(){
@@ -62,10 +62,8 @@
     		var b = document.getElementById("txt2").value;
     		a = Number(a);
     		b = Number(b);
-    		var llist=[];
-    		for (L = 0; L < b+1; L++) {
+    		for (L = 0; L < b+1; L++)
     			output.innerHTML += "You have a "+choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)*100+ "% chance of getting exactly" +L+ "matches <br/>";
-    		}
     		}
     </script>
     
