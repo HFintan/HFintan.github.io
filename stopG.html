@@ -62,15 +62,20 @@
     		var b = document.getElementById("txt2").value;
     		a = Number(a);
     		b = Number(b);
-    		var llist=[];
+    		var llist='';
     		for (L = 0; L < b+1; L++) {
-    			var listel=choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L);
-	    			llist[L+1]=[L,listel];
+    			llist += L+1 +<br/> + choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)+ <br/><br/>;
     		}	
 		document.getElementById("demo").innerHTML=llist;
     		}
 
     </script>
+    
+<!--    var text = '';
+for (i = 0; i < 5; i++) {
+    text += i + "<br/>";
+}
+console.log(text);-->
 <!--      	-->
     
     <script>
