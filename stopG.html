@@ -62,8 +62,8 @@
     		var K = document.getElementById("txt2").value;
     		N = Number(N);
     		K = Number(K);
-    		for (L = 0; L < b+1; L++){
-    			document.getElementById("demo").innerHTML = 'You have a '+choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)*100+ '% chance of getting exactly ' +L+ ' matches <br/>';}
+    		for (L = 0; L < K+1; L++)
+    		document.getElementById("demo").innerHTML = 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches. <br/>';
     		}
     </script>
 
