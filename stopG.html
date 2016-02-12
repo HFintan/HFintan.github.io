@@ -58,24 +58,32 @@
     </script>
     <script>
     function calculate3(){
+		var output=document.getElementById('output')
     		var a = document.getElementById("txt1").value;
     		var b = document.getElementById("txt2").value;
     		a = Number(a);
     		b = Number(b);
-    		var llist='';
+    		var llist=[];
     		for (L = 0; L < b+1; L++) {
-    			llist += L+1 +<br/> + choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)+ <br/><br/>;
-    		}	
-		document.getElementById("demo").innerHTML=llist;
+    			llist[L+1]= "You have a "+choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)+ "% chance of getting exactly" +L+ "matches"<br/>;
+    		}
+		output.innerHTML=llist;
     		}
 
     </script>
     
-<!--    var text = '';
-for (i = 0; i < 5; i++) {
-    text += i + "<br/>";
+<!--    var output = document.getElementById('output'),
+ 
+
+for (var i=0, len=cars.length, text="You've got "+len+" cars: 
+"; i<len; i++) {
+
+    text += cars[i] + "
+";
+
 }
-console.log(text);-->
+
+output.innerHTML += text;-->
 <!--      	-->
     
     <script>
