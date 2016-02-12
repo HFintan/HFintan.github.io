@@ -30,23 +30,21 @@
 
 <br><br><br><br><br><br><br><br>
 
-    <p>Click the button to calculate x.</p>
-    <button onclick="calculate()">Try it</button>
     <br/>
-    <br/>Enter first number:
-    <input type="text" id="txt1" name="text1">Enter second number:
-    <input type="text" id="txt2" name="text2"> Enter third number:
-    <input type="text" id="txt3" name="text3">
+    <br/>Population:
+    <input type="text" id="txt1" name="text1">
+    <br/>Number of Swipes:
+    <p>Click the button to calculate x.</p>
+    <button onclick="calculate()">The expected number of matches for an Adonis in your area.</button>
+    <input type="text" id="txt2" name="text2"> 
     <p id="demo"></p>
     <script>
     function calculate(){
     		var a = document.getElementById("txt1").value;
     		var b = document.getElementById("txt2").value;
-    		var c = document.getElementById("txt3").value;
     		a = Number(a)
     		b = Number(b)
-    		c = Number(c)
-    		var x = fracpow(a,b,c)
+    		var x = sumup(a,b)
     		document.getElementById("demo").innerHTML=x;}
     </script>
     <script>
@@ -56,15 +54,21 @@
     		else {return a*choose(a-1,b-1)/b}
     	}
     </script>
+
     <script>
     	function fracpow(a,b,c) {
-    		return Math.pow((a/b),c); }
+    		return Math.pow((a/b),c); 
+    	}
     </script>
+    
     <script>
     	function sumup(K,N) {
     		var count = 0;
-    		for (L = 0; L < K+1; L++) {count = count+L*choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L);}
-    	return count;}
+    		for (L = 0; L < K+1; L++) {
+    			count = count+L*choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L);
+    		}
+    	return count;
+    	}
     </script>
         		<!--	var a = fracpow(K,N,L);
     			var b = fracpow(N-K,N,K-L);
