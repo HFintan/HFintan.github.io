@@ -64,10 +64,8 @@
     	function sumup(K,N) {
     		var count = 0;
     		for (L = 0; L < K+1; L++) {
-    			var a = fracpow(K,N,L)
-    			var b = fracpow(N-K,N,K-L)
-    			a = Number(a)
-    			b = Number(b)
+    			a = fracpow(K,N,L)
+    			b = fracpow(N-K,N,K-L)
     			count = count + L*a*b}
     	return count;}
     </script>
