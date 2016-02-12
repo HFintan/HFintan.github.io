@@ -64,14 +64,13 @@
     		b = Number(b);
     		var llist=[];
     		for (L = 0; L < b+1; L++) {
-      			llist[L+1]=[L,choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)];
+	    		document.getElementById("demo").innerHTML=[L,choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)];
     		}
-    		document.getElementById("demo").innerHTML=llist;}
+
+    		}
 
     </script>
-<!--    			llist.push([L,choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)]);
-    		}
-    		document.getElementById("demo").innerHTML=llist;}-->    
+<!--      			llist[L+1]=[L,choose(b,L)*fracpow(b,a,L)*fracpow(a-b,a,b-L)];-->
     
     <script>
     	function choose(a, b) {
