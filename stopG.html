@@ -73,7 +73,7 @@ lead you to believe that you are more attractive than you felt heretofore, then 
     		b = Number(b);
     		if (a<b){document.getElementById("demo").innerHTML = 'Were you dropped on your head as a child? \n';}
     		else
-    			{var x = Math.round(1-fracpow(a-b,a,b)*100)/100;
+    			{var x = (1-fracpow(a-b,a,b))*100;
     			document.getElementById("demo").innerHTML= +x+'%';}
     		}
     </script>
