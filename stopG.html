@@ -28,7 +28,10 @@
 <div id="page">
 <div id="content">
 
+<br> <b>Tinder Calculator</b>
 <br>
+<br> The calculator gives an estimate of the number of matches you might receive for a given number of swipes, in a given
+ Tinder population. 
     <br/>
     <br/>Estimated Tinder Population: <input type="text" id="txt1" name="text1">
     <br/>Number of Swipes: <input type="text" id="txt2" name="text2">
@@ -36,6 +39,14 @@
     <br/><button onclick="calculate()">The expected number of matches for an undiscerning Adonis in your area.</button>
     <br/><button onclick="calculate2()">The probability of an undiscerning Adonis getting at least one match.</button>
     <br/><button onclick="calculate3()">The probability of an undiscerning Adonis getting exactly m matches.</button>
+<br> Caveats:
+<br> The calculator assumes you swipe right on everyone, and are an Adonis/average-looking woman.
+<br> It also does not take Tinder's actual algorithm into account, because we don't know what it is. It assumes that other
+users are shown to you at random - ie. none of this "friends of friends" or "similar interests" lark, no preference given to
+people who have already swiped on you, and no psychological inferences about your attractiveness based on your interactions 
+with other users - just an assumption of complete randomness, and cold, flaccid mathematics.
+    
+    
     <p id="demo"></p>
     <script>
     function calculate(){
