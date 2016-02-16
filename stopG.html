@@ -46,7 +46,7 @@
     		a = Number(a)
     		b = Number(b)
     		var x = sumup(b,a)
-    		document.getElementById("demo").innerHTML=x;}
+    		document.getElementById("demo").innerHTML=math.round(x*100)/100;}
     </script>
     <script>
     function calculate2(){
@@ -56,7 +56,7 @@
     		a = Number(a)
     		b = Number(b)
     		var x = 1-fracpow(a-b,a,b)
-    		document.getElementById("demo").innerHTML=x;}
+    		document.getElementById("demo").innerHTML=math.round(x*100)/100;}
     </script>
     <script>
     function calculate3(){
@@ -66,7 +66,7 @@
     		N = Number(N);
     		K = Number(K);
     		for (L = 0; L < K+1; L++)
-    		document.getElementById("demo").innerHTML += 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches. <br/>';
+    		document.getElementById("demo").innerHTML += 'You have a '+math.round(choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100*100)/100+ '% chance of getting exactly ' +L+ ' matches. <br/>';
     		}
     </script>
 
