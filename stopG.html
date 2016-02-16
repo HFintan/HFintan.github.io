@@ -28,10 +28,9 @@
 <div id="page">
 <div id="content">
 
-<br><br><br><br><br><br><br><br>
-
+<br>
     <br/>
-    <br/>Population: <input type="text" id="txt1" name="text1">
+    <br/>Estimated Tinder Population: <input type="text" id="txt1" name="text1">
     <br/>Number of Swipes: <input type="text" id="txt2" name="text2">
     <br/><p>Click the button to calculate </p>
     <br/><button onclick="calculate()">The expected number of matches for an undiscerning Adonis in your area.</button>
@@ -66,7 +65,7 @@
     		N = Number(N);
     		K = Number(K);
     		for (L = 0; L < K+1; L++)
-    		document.getElementById("demo").innerHTML += 'You have a '+Math.round(choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100*100)/100+ '% chance of getting exactly ' +L+ ' matches. <br/>';
+    		document.getElementById("demo").innerHTML += 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches. <br/>';
     		}
     </script>
 
