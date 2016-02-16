@@ -45,8 +45,8 @@
     		var b = document.getElementById("txt2").value;
     		a = Number(a)
     		b = Number(b)
-    		var x = sumup(b,a)
-    		document.getElementById("demo").innerHTML=Math.round(x*100)/100;}
+    		var x = Math.round(sumup(b,a)*100)/100
+    		document.getElementById("demo").innerHTML=x;}
     </script>
     <script>
     function calculate2(){
@@ -55,7 +55,7 @@
     		var b = document.getElementById("txt2").value;
     		a = Number(a)
     		b = Number(b)
-    		var x = 1-fracpow(a-b,a,b)
+    		var x = Math.round((1-fracpow(a-b,a,b))*100)/100
     		document.getElementById("demo").innerHTML=Math.round(x*100)/100;}
     </script>
     <script>
