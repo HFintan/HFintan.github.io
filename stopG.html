@@ -57,8 +57,10 @@ with other users - just an assumption of complete randomness, and cold, flaccid 
     		var b = document.getElementById("txt2").value;
     		a = Number(a)
     		b = Number(b)
-    		var x = sumup(b,a)
-    		document.getElementById("demo").innerHTML=x;}
+    		if (a<b){document.getElementById("demo").innerHTML = 'You can not swipe more people than are in the population, you fecking eejit.\n'}
+    		else
+    			{var x = sumup(b,a)
+    			document.getElementById("demo").innerHTML=x;}
     </script>
     <script>
     function calculate2(){
@@ -67,8 +69,10 @@ with other users - just an assumption of complete randomness, and cold, flaccid 
     		var b = document.getElementById("txt2").value;
     		a = Number(a)
     		b = Number(b)
-    		var x = 1-fracpow(a-b,a,b)
-    		document.getElementById("demo").innerHTML=x;}
+    		if (a<b){document.getElementById("demo").innerHTML = 'Were you dropped on your head as a child? \n'}
+    		else
+    			{var x = 1-fracpow(a-b,a,b)
+    			document.getElementById("demo").innerHTML=x;}
     </script>
     <script>
     function calculate3(){
@@ -77,8 +81,10 @@ with other users - just an assumption of complete randomness, and cold, flaccid 
     		var K = document.getElementById("txt2").value;
     		N = Number(N);
     		K = Number(K);
-    		for (L = 0; L < K+1; L++)
-    		document.getElementById("demo").innerHTML += 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches. <br/>';
+    		if (N<K){document.getElementById("demo").innerHTML = 'Maybe you deserve 0 matches...\n'}
+    		else
+	    		{for (L = 0; L < K+1; L++)
+    			document.getElementById("demo").innerHTML += 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches. <br/>';}
     		}
     </script>
 
