@@ -53,8 +53,8 @@ power to you.
     <br/> Suppose we are a little childish and wish to assign an attractiveness ranking of 0 to 10 to Tinder users.
     <br/> If we make the ridiculous assumptions that attractiveness of people on Tinder has a normal distribution with mean 5
     and standard deviation 1.2 (not really true), and also assuming that the other users do not swipe right
-    on anyone with a lower `rating' than themselves (also not true), and if you swipe right on everyone and we further assume
-    that you are shown to everyone you swipe on (highly unlikely), if for  
+    on anyone with a lower `rating' than themselves (also not true), and if you swipe right on everyone and we further assume 
+    (and we all know what 'assume' did) that you are shown to everyone you swipe on (highly unlikely), if for  
     <br/><b>Number of swipes:</b> <input type="text" id="txt3" name="text3"> swipes, you get
     <br/><b>Number of matches:</b> <input type="text" id="txt4" name="text4"> matches
     <br/> we can estimate
@@ -116,7 +116,7 @@ power to you.
     		var M = document.getElementById("txt4").value;
     		S = Number(S);
     		M = Number(M);
-    		if (S<M){var x = 'narcissistic and highly delusional...\n';}
+    		if (S<M){var x = 'narcissistic, highly delusional, and not very good at maths...\n';}
     			else if (M/S<0.0004){var x = 'a 0 and a 1';}
     			else if (M/S<0.0062){var x = 'a 1 and a 2';}
     			else if (M/S<0.0478){var x = 'a 2 and a 3';}
