@@ -53,8 +53,8 @@ lead you to believe that you are more attractive than you felt heretofore, then 
     <br/> BETA
     <br/> Suppose we are a little childish and wish to assign an attractiveness ranking of 0 to 10 to Tinder users. Assuming
     a normal distribution with mean 5 and standard deviation 1.2, and further assuming that the other users do not swipe right
-    on anyone with a lower `rating' than themselves, and if you swipe right on everyone, from  
-    <br/>Number of swipes: <input type="text" id="txt3" name="text3"> and
+    on anyone with a lower `rating' than themselves, and if you swipe right on everyone, for  
+    <br/>Number of swipes: <input type="text" id="txt3" name="text3"> and get
     <br/>Number of matches: <input type="text" id="txt4" name="text4">
     <br/> we can estimate
     <br/><button onclick="calculate4()">What Tinder users would rate you out of 10.</button>
@@ -124,7 +124,7 @@ lead you to believe that you are more attractive than you felt heretofore, then 
     		else if (M/S<0.9938){var x = '7 and 8';}
     		else if (M/S<0.9996){var x = '8 and 9';}
     		else {var x = '9 and 10'}
-    			document.getElementById("demo").innerHTML = 'You are somewhere between' x;}
+    		document.getElementById("demo").innerHTML = 'You are somewhere between' x;
     		}
     </script>
 
