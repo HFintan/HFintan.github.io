@@ -116,9 +116,8 @@ lead you to believe that you are more attractive than you felt heretofore, then 
     		M = Number(M);
     		if (S<M){document.getElementById("demo").innerHTML = 'You are somewhere between narcissistic and highly delusional...\n';}
     		else
-	    		{for (L = 0; L < M+1; L++)
-    			document.getElementById("demo").innerHTML += 'You have a '+choose(M,L)*fracpow(M,S,L)*fracpow(S-M,S,M-L)*100+ '% chance of getting exactly ' +L+ ' matches. <br/>';}
-    		}
+			var x =S+M;
+    			document.getElementById("demo").innerHTML = 'You are somewhere between' x;    		}
     </script>
 
 <!--    <script>    function calculate4(){
