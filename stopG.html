@@ -50,6 +50,21 @@ lead you to believe that you are more attractive than you felt heretofore, then 
     <br/><button onclick="calculate2()">The probability of you getting at least one match.</button>
     <br/><button onclick="calculate3()">The probability of you getting exactly m matches.</button>
     
+    <br/> BETA
+    <br/> Suppose we are a little childish and wish to assign an attractiveness ranking of 0 to 10 to Tinder users. Assuming
+    a normal distribution with mean 5 and standard deviation 1.2, and further assuming that the other users do not swipe right
+    on anyone with a lower `rating' than themselves, and if you swipe right on everyone, from  
+    <br/>Number of swipes: <input type="text" id="txt3" name="text3"> and
+    <br/>Number of matches: <input type="text" id="txt4" name="text4">
+    <br/> we can estimate
+    <br/><button onclick="calculate4()">What Tinder users would rate you out of 10.</button>
+    <!--<br/><button onclick="calculate5()">How many users you have to scroll through before seeing one who is attractive enough
+    for you. </button>
+    <br/><button onclick="calculate6()">How many matches you might expect.</button>-->
+    <br/> Please do not take this seriously. You're probably gorgeous and misunderstood. If you have any questions, or further
+    suggestions for relevant calculations, please email knightsatari@gmail.com .
+    
+    
     <p id="demo"></p>
     <script>
     function calculate(){
@@ -91,6 +106,27 @@ lead you to believe that you are more attractive than you felt heretofore, then 
     		}
     </script>
 
+    <script>
+    function calculate4(){
+    		document.getElementById("demo").innerHTML = '\n';
+    		var S = document.getElementById("txt3").value;
+    		var M = document.getElementById("txt4").value;
+    		S = Number(S);
+    		M = Number(M);
+    		if (S<M){document.getElementById("demo").innerHTML = 'You are somewhere between narcissistic and delusional.';}
+    		else if (M/S<0.0004){var x = '0 and 1';}
+    		else if (M/S<0.0062){var x = '1 and 2';}
+    		else if (M/S<0.0478){var x = '2 and 3';}
+    		else if (M/S<0.2023){var x = '3 and 4';}
+    		else if (M/S<0.5){var x = '4 and 5';}
+    		else if (M/S<0.7977){var x = '5 and 6';}
+    		else if (M/S<0.9522){var x = '6 and 7';}
+    		else if (M/S<0.9938){var x = '7 and 8';}
+    		else if (M/S<0.9996){var x = '8 and 9';}
+    		else {var x = '9 and 10'}
+    			document.getElementById("demo").innerHTML = 'You are somewhere between' x;}
+    		}
+    </script>
 
 
 <!--<script>
@@ -127,25 +163,7 @@ lead you to believe that you are more attractive than you felt heretofore, then 
     	}
     </script>
     
-    <script type="text/javascript" src="jscharts.js"></script>
-<div id="chartcontainer">This is just a replacement in case Javascript is not available or used for SEO purposes</div>
-<script type="text/javascript">
-	var myData = new Array([10, 20], [15, 10], [20, 30], [25, 10], [30, 5]);
-	var myChart = new JSChart('chartcontainer', 'line');
-	myChart.setDataArray(myData);
-	myChart.draw();
-</script>
-var myData = new Array(['2005', 2], ['2006', 1], ['2007', 3], ['2008', 6]);
-var myChart = new JSChart('chartid', 'bar');
-myChart.setDataArray(myData);
-myChart.setBarColor('#42aBdB');
-myChart.setBarOpacity(0.8);
-myChart.setBarBorderColor('#D9EDF7');
-myChart.setBarValues(false);
-myChart.setTitleColor('#8C8383');
-myChart.setAxisColor('#777E81');
-myChart.setAxisValuesColor('#777E81');
-myChart.draw();
+    
 
 </div>
 </div>
