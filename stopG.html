@@ -110,14 +110,14 @@ lead you to believe that you are more attractive than you felt heretofore, then 
    <script>
     function calculate4(){
     		document.getElementById("demo").innerHTML = '\n';
-    		var N = document.getElementById("txt3").value;
-    		var K = document.getElementById("txt4").value;
-    		N = Number(N);
-    		K = Number(K);
-    		if (N<K){document.getElementById("demo").innerHTML = 'You are somewhere between narcissistic and highly delusional...\n';}
+    		var S = document.getElementById("txt3").value;
+    		var M = document.getElementById("txt4").value;
+    		S = Number(S);
+    		M = Number(M);
+    		if (S<M){document.getElementById("demo").innerHTML = 'You are somewhere between narcissistic and highly delusional...\n';}
     		else
-	    		{for (L = 0; L < K+1; L++)
-    			document.getElementById("demo").innerHTML += 'You have a '+choose(K,L)*fracpow(K,N,L)*fracpow(N-K,N,K-L)*100+ '% chance of getting exactly ' +L+ ' matches. <br/>';}
+	    		{for (L = 0; L < M+1; L++)
+    			document.getElementById("demo").innerHTML += 'You have a '+choose(M,L)*fracpow(M,S,L)*fracpow(S-M,S,M-L)*100+ '% chance of getting exactly ' +L+ ' matches. <br/>';}
     		}
     </script>
 
