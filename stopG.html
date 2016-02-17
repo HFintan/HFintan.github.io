@@ -127,6 +127,14 @@ lead you to believe that you are more attractive than you felt heretofore, then 
     	}
     </script>
     
+    <script type="text/javascript" src="jscharts.js"></script>
+<div id="chartcontainer">This is just a replacement in case Javascript is not available or used for SEO purposes</div>
+<script type="text/javascript">
+	var myData = new Array([10, 20], [15, 10], [20, 30], [25, 10], [30, 5]);
+	var myChart = new JSChart('chartcontainer', 'line');
+	myChart.setDataArray(myData);
+	myChart.draw();
+</script>
 var myData = new Array(['2005', 2], ['2006', 1], ['2007', 3], ['2008', 6]);
 var myChart = new JSChart('chartid', 'bar');
 myChart.setDataArray(myData);
