@@ -8,8 +8,31 @@
     <h1>What I'm currently working on</h1>
     
     <h2>
-        STUFF
-    </h2>
-
+Current project: Automate fence sizing.    </h2>
+Perl and sed appear unhelpful for seaching and replacing across lines, so I'm going to do this all in the form of a vim macro,
+which won't be pretty, so I'll probably stick it in a separate file eventually.<br>
+    Anyway, the basic idea is to replace all variants of parentheses with \left( and \right) respectively, and then, according
+    to their contents, assign them the desired \Bigg, \bigg, \Big, \big, or leave them as ( .<br>
+    I've decided to do this only within display mode, for the sake of my sanity. So, the steps are:
+    <item> Highlight bits in display mode </item> 
+    <item> Reduce all the parens within display mode to \left </item>
+    <item> Search through the displays and find parens and add in Biggs where necessary, then biggs, etc.</item>
+    <item>????</item>
+    <item>Profit!</item>
+    
+    <h3> Highlighting bits within math</h3>
+      For \begin{align} environments, etc, this should be easy - PROVIDED there are none of these "display-creating" environments
+      contained within each other. I think we might be okay on this front - \begin{alignat} and \begin{split} need to be within
+      display-mode already, and no-one puts a \begin{align} within a \begin{align}. Some of the plain tex stuff, like displaylines
+      and eqalign etc do get nested, but again, they need to be placed within math.
+      So the tricky display mode is the one which is surrounded simply by $$ $$. This is fixable using
+      <code>:let a=['$$%FHENDDISPLAY','%FHBEGINDISPLAY$$']^M
+ \ :%s/\$\$/\=reverse(a)[0]/ge^M
+ \ :%s/%FHBEGINDISPLAY\$\$/%FHBEGINDISPLAY\r\$\$/ge^M
+        \ :%s/\$\$%FHENDDISPLAY/\$\$\r%FHENDDISPLAY/ge^M</code>
+      The first line creates a list which we will alternate between (assuming there are no odd $$ in a comment somewhere - that
+      would mess this up royally), and replace $$ with. The second two lines are just for breaking these replacements onto
+      separate lines for aesthetic and not-effing-everything-up purposes.
+    
   </body>
 </html>
