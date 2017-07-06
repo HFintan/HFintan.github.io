@@ -30,7 +30,7 @@ which won't be pretty, so I'll probably stick it in a separate file eventually.<
     within a <b>\begin{align}</b>. Some of the plain tex stuff, like <b>displaylines</b> and <b>eqalign</b> etc do
     get nested, but again, they need to be placed within math.<br>
     So the tricky display mode is the one which is surrounded simply by <b>$$</b> <b>$$</b>. This is fixable using<br><br>
-    <font size="18>
+    <font size="4">
     <code>:let a=['$$%FHENDDISPLAY','%FHBEGINDISPLAY$$']^M</code><br>
     <code>\ :%s/\$\$/\=reverse(a)[0]/ge^M</code><br>
     <code>\ :%s/%FHBEGINDISPLAY\$\$/%FHBEGINDISPLAY\r\$\$/ge^M</code><br>
