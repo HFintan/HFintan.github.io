@@ -9,15 +9,15 @@
     
     <h2>
 Current project: Automate fence sizing.    </h2>
-Perl and sed appear unhelpful for seaching and replacing across lines, so I'm going to do this all in the form of a vim macro,
+Perl and sed appear unhelpful for seaching and replacing across lines, so I'm going to do this largely in the form of a vim macro,
 which won't be pretty, so I'll probably stick it in a separate file eventually.<br>
     Anyway, the basic idea is to replace all variants of parentheses with <b>\left(</b> and <b>\right)</b> (which we don't want
-    in the finished product) respectively, and then, according
-    to their contents, assign them the desired \Bigg, \bigg, \Big, \big, or leave them as ( .<br>
+    in the finished product), respectively, and then, according
+    to their contents, assign them the desired level of <b>\bigl</b>, <b>\bigr</b>, or leave them as ( .<br>
     I've decided to do this only within display mode, for the sake of my sanity. So, the steps are:<br>
     <h4>1. Identify bits in display mode </h4> 
     <h4>2. Reduce all the parens within display mode to <b>\left</b> </h4>
-    <h4>3. Make a list of things that need Bigg, bigg, Big, and big parens </h4>
+    <h4>3. (External permanent: Have a list of things that need Bigg, bigg, Big, and big parens) </h4>
     <h4>4. Search through the displays and find parens and add in Biggs where necessary, then biggs, etc.</h4>
     <h4>5. ????</h4>
     <h4>6. Profit!</h4>
@@ -25,28 +25,29 @@ which won't be pretty, so I'll probably stick it in a separate file eventually.<
    
     <h3> Identify bits in display mode</h3>
     <it>(Issue: Want to avoid diagrams) </it><br>
-    For <b>\begin{align}</b> environments, etc, this should be easy - PROVIDED there are none of these 
-    "display-creating" environments contained within each other. I think we might be okay on this front - <b>\begin{alignat}</b>
-    and <b>\begin{split}</b> need to be within display-mode already, and no-one puts a <b>\begin{align}</b>
-    within a <b>\begin{align}</b>. Some of the plain tex stuff, like <b>displaylines</b> and <b>eqalign</b> etc do
-    get nested, but again, they need to be placed within math.<br>
-    So the tricky display mode is the one which is surrounded simply by <b>$$</b> <b>$$</b>. This is fixable using<br><br>
+    For <b>\begin{align}</b> environments, etc, this should be easy, provided there are none of these 
+    "display-creating" environments contained within each other. I think we should be okay on this front - <b>\begin{alignat}</b>
+    and <b>\begin{split}</b>, for example, need to be within display-mode already. Similarly, the plain tex 
+    stuff, like <b>displaylines</b> and <b>eqalign</b> etc do
+    get nested, but again, they need to be placed within math. You won't have a <b>\begin{align}</b>
+    within a <b>\begin{align}</b>.
+    The tricky display mode is the one which is surrounded simply by <b>$$</b> <b>$$</b>. This is fixable using<br><br>
     <font size="4">
-    <code>:let a=['$$%FHENDDISPLAY','%FHBEGINDISPLAY$$']^M</code><br>
-    <code>\ :%s/\$\$/\=reverse(a)[0]/ge^M</code><br>
-    <code>\ :%s/%FHBEGINDISPLAY\$\$/%FHBEGINDISPLAY\r\$\$/ge^M</code><br>
-    <code>\ :%s/\$\$%FHENDDISPLAY/\$\$\r%FHENDDISPLAY/ge^M</code><br><br>
-    </font>
-      The first line creates a list whose items we will alternate between (assuming there are no odd <b>$$</b> in a comment somewhere
-    - that
-    would mess this up royally), and replace <b>$$</b> with. The second two lines are just for breaking these replacements onto
-      separate lines for aesthetic and not-effing-everything-up purposes.<br>
+    <code>1.  :let a=['$$%FHENDDISPLAY','%FHBEGINDISPLAY$$']^M</code><br>
+    <code>2.  \ :%s/\$\$/\=reverse(a)[0]/ge^M</code><br>
+    <code>3.  \ :%s/%FHBEGINDISPLAY\$\$/%FHBEGINDISPLAY\r\$\$/ge^M</code><br>
+    <code>4.  \ :%s/\$\$%FHENDDISPLAY/\$\$\r%FHENDDISPLAY/ge^M</code>
+    </font><br><br>
+      Line 1 creates a two-item list whose items we will alternate between (assuming there are no odd <b>$$</b> 
+    in a comment somewhere- that
+    would mess this up royally), and replace <b>$$</b> with. Line 2 makes this replacement. Lines 3 and 4 are just 
+    for breaking these replacements onto separate lines for aesthetic and not-effing-everything-up purposes.<br>
     For <b>\begin{align}</b> etc., we will want to replace each instance using, say
-     <font size="4">
-       <code>:%s/\\begin{align}/%FHBEGINDISPLAY\\begin{align}/ge^M</code><br>
-       <code>:%s/\\end{align}/\\end{align}%FHENDDISPLAY/ge^M</code><br>
-    </font>
-    (Then the last two lines of the previous code snippet will split these into two lines as required.)<br>
+     <br><br><font size="4">
+       <code>5. :%s/\\begin{align}/%FHBEGINDISPLAY\\begin{align}/ge^M</code><br>
+       <code>6. :%s/\\end{align}/\\end{align}%FHENDDISPLAY/ge^M</code>
+    </font><br><br>
+    (Then the lines 3 and 4 of the previous code snippet will split these into two lines as required.)<br>
     This is straightforward, but the interesting part here is that I don't want to have to write out these two lines for
     each of <b>align</b>, <b>align*</b>, <b>equation</b>, <b>equation*</b>, and what have you - especially as this list
     may grow over time. Therefore, I would like to be able to loop over a list of such terms. I have not yet figured out how
@@ -55,20 +56,20 @@ which won't be pretty, so I'll probably stick it in a separate file eventually.<
     <h3> Reduce all the parens within display mode to <b>\left</b></h3>
       Going to use sed here, because doing it within vim would require multiple iterations.
       To use sed to replace bigl and bigr etc with left and right, use
-      <font size="4">
-        <code>:! sed -i.bak '/FHBEGINCOMMENT/,/FHENDCOMMENT/s/\(\\bigl(\|\\Bigl(\|\\biggl(\|\\Biggl(\|\\big(\)/\\left(/g' main.tex ^ML^M</code>
-        <code>:! sed -i.bak '/FHBEGINCOMMENT/,/FHENDCOMMENT/s/\(\\bigr)\|\\Bigr)\|\\biggr)\|\\Biggr)\|\\big)\)/\\right)/g' main.tex ^ML^M</code>
+      <br><br><font size="4">
+        <code>7.  :! sed -i.bak '/FHBEGINCOMMENT/,/FHENDCOMMENT/s/\(\\bigl(\|\\Bigl(\|\\biggl(\|\\Biggl(\|\\big(\)/\\left(/g' main.tex^ML^M</code><br>
+        <code>8.  :! sed -i.bak '/FHBEGINCOMMENT/,/FHENDCOMMENT/s/\(\\bigr)\|\\Bigr)\|\\biggr)\|\\Biggr)\|\\big)\)/\\right)/g' main.tex^ML^M</code>
       </font><br><br>
       
       <h3>Make a list of things that need various sized parens</h3><br><br>
         
-        <h3>Search through the displays and find lefts and rights and check the contents and fill in bigls etc, where necessary,
+      <h3>Search through the displays and find lefts and rights and check the contents and fill in bigls etc, where necessary,
           starting with the largest.</h3> 
     Again, there is a large list of these to account for, so I'd better get the fecking
-          iterative list searching in vim sorted, but the general formula is:
+          iterative list searching in vim sorted, but the general formula is:<br><br>
       <font size="4">
         <code>s/%FHBEGINDISPLAY\(\_.\{-}\)\\left(\(\_.\{-}\)\\sum\(\_.\{-}\)\right)\(\_.\{-}\)%FHENDDISPLAY/\1\\biggl(\2\\sum\3\biggr)\4%FHENDDISPLAY^M</code>
-      </font>
+      </font><br><br>
           (with \\sum being replaced by everything needing biggs, etc.)
 
     <h3> Tidy up </h3>
