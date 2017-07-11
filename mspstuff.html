@@ -22,8 +22,9 @@ which won't be pretty, so I'll probably stick it in a separate file eventually.<
     <h4>5. ????</h4>
     <h4>6. Profit!</h4>
     <br><br>
+   
     <h3> Identify bits in display mode</h3>
-    <emph>Issue: Want to avoid diagrams </emph><br>
+    <it>(Issue: Want to avoid diagrams) </it><br>
     For <b>\begin{align}</b> environments, etc, this should be easy - PROVIDED there are none of these 
     "display-creating" environments contained within each other. I think we might be okay on this front - <b>\begin{alignat}</b>
     and <b>\begin{split}</b> need to be within display-mode already, and no-one puts a <b>\begin{align}</b>
@@ -39,7 +40,29 @@ which won't be pretty, so I'll probably stick it in a separate file eventually.<
       The first line creates a list whose items we will alternate between (assuming there are no odd <b>$$</b> in a comment somewhere
     - that
     would mess this up royally), and replace <b>$$</b> with. The second two lines are just for breaking these replacements onto
-      separate lines for aesthetic and not-effing-everything-up purposes.
+      separate lines for aesthetic and not-effing-everything-up purposes.<br>
+    For <b>\begin{align}</b> etc., we will want to replace each instance using, say
+     <font size="4">
+       <code>:%s/\\begin{align}/%FHBEGINDISPLAY\\begin{align}/ge^M</code><br>
+       <code>:%s/\\end{align}/\\end{align}%FHENDDISPLAY/ge^M</code><br>
+    </font>
+    (Then the last two lines of the previous code snippet will split these into two lines as required.)<br>
+    This is straightforward, but the interesting part here is that I don't want to have to write out these two lines for
+    each of <b>align</b>, <b>align*</b>, <b>equation</b>, <b>equation*</b>, and what have you - especially as this list
+    may grow over time. Therefore, I would like to be able to loop over a list of such terms. I have not yet figured out how
+    to do this.
     
+    <h3> Reduce all the parens within display mode to <b>\left</b><h3>
+      Again, there is a large list of these to account for (<b>bigl</b>,<b>Bigl</b>,<b>biggl</b>,<b>Bigl</b>,
+      <b>big</b>,<b>left</b>, but the general formula is
+      <font size="4">
+        <code>s/%FHBEGINDISPLAY\(\_.\{-}\)\\bigl(\(\_.\{-}\)%FHENDDISPLAY/\1\\left(\2%FHENDDISPLAY^M</code>
+      </font>
+      Unfortunately, this would require multiple iterations in case there are multiple bigls in a display environment, as is very
+      likely. Therefore, there this is perhaps better done with sed. Who knows, this may even make it easier to iterate over a
+      number of list entries.
+      To use sed to replace, use
+      <font size="4">
+        <code>:! sed -i '/FHBEGINCOMMENT/,/FHENDCOMMENT/s/bigl(/left(/g' main.tex    
   </body>
 </html>
