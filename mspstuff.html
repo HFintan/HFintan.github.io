@@ -50,19 +50,28 @@ which won't be pretty, so I'll probably stick it in a separate file eventually.<
     This is straightforward, but the interesting part here is that I don't want to have to write out these two lines for
     each of <b>align</b>, <b>align*</b>, <b>equation</b>, <b>equation*</b>, and what have you - especially as this list
     may grow over time. Therefore, I would like to be able to loop over a list of such terms. I have not yet figured out how
-    to do this.
+    to do this.<br><br>
     
-    <h3> Reduce all the parens within display mode to <b>\left</b><h3>
-      Again, there is a large list of these to account for (<b>bigl</b>,<b>Bigl</b>,<b>biggl</b>,<b>Bigl</b>,
-      <b>big</b>,<b>left</b>, but the general formula is
+    <h3> Reduce all the parens within display mode to <b>\left</b></h3>
+      Going to use sed here, because doing it within vim would require multiple iterations.
+      To use sed to replace bigl and bigr etc with left and right, use
       <font size="4">
-        <code>s/%FHBEGINDISPLAY\(\_.\{-}\)\\bigl(\(\_.\{-}\)%FHENDDISPLAY/\1\\left(\2%FHENDDISPLAY^M</code>
+        <code>:! sed -i.bak '/FHBEGINCOMMENT/,/FHENDCOMMENT/s/\(\\bigl(\|\\Bigl(\|\\biggl(\|\\Biggl(\|\\big(\)/\\left(/g' main.tex ^ML^M</code>
+        <code>:! sed -i.bak '/FHBEGINCOMMENT/,/FHENDCOMMENT/s/\(\\bigr)\|\\Bigr)\|\\biggr)\|\\Biggr)\|\\big)\)/\\right)/g' main.tex ^ML^M</code>
+      </font><br><br>
+      
+      <h3>Make a list of things that need various sized parens</h3><br><br>
+        
+        <h3>Search through the displays and find lefts and rights and check the contents and fill in bigls etc, where necessary,
+          starting with the largest.</h3> 
+    Again, there is a large list of these to account for, so I'd better get the fecking
+          iterative list searching in vim sorted, but the general formula is:
+      <font size="4">
+        <code>s/%FHBEGINDISPLAY\(\_.\{-}\)\\left(\(\_.\{-}\)\\sum\(\_.\{-}\)\right)\(\_.\{-}\)%FHENDDISPLAY/\1\\biggl(\2\\sum\3\biggr)\4%FHENDDISPLAY^M</code>
       </font>
-      Unfortunately, this would require multiple iterations in case there are multiple bigls in a display environment, as is very
-      likely. Therefore, there this is perhaps better done with sed. Who knows, this may even make it easier to iterate over a
-      number of list entries.
-      To use sed to replace, use
-      <font size="4">
-        <code>:! sed -i '/FHBEGINCOMMENT/,/FHENDCOMMENT/s/bigl(/left(/g' main.tex    
+          (with \\sum being replaced by everything needing biggs, etc.)
+
+    <h3> Tidy up </h3>
+    Remove any crap I've added in.
   </body>
 </html>
