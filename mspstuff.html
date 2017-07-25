@@ -12,19 +12,18 @@ Current project: Automate fence sizing.    </h2>
 Perl and sed appear unhelpful for seaching and replacing across lines, so I'm going to do this largely in the form of a vim macro,
 which won't be pretty, so I'll probably stick it in a separate file eventually.<br>
     Anyway, the basic idea is to replace all variants of parentheses with <b>\left(</b> and <b>\right)</b> (which we don't want
-    in the finished product), respectively, and then, according
+    in the finished product anyway), respectively, and then, according
     to their contents, assign them the desired level of <b>\bigl</b>, <b>\bigr</b>, or leave them as ( .<br>
     I've decided to do this only within display mode, for the sake of my sanity. So, the steps are:<br>
     <h4>1. Identify bits in display mode </h4> 
     <h4>2. Reduce all the parens within display mode to <b>\left</b> </h4>
-    <h4>3. (External permanent: Have a list of things that need Bigg, bigg, Big, and big parens) </h4>
+    <h4>3. (External once-off: Create a list of things that need Bigg, bigg, Big, and big parens) </h4>
     <h4>4. Search through the displays and find parens and add in Biggs where necessary, then biggs, etc.</h4>
     <h4>5. ????</h4>
     <h4>6. Profit!</h4>
     <br><br>
    
     <h3> Identify bits in display mode</h3>
-    <it>(Issue: Want to avoid diagrams) </it><br>
     For <b>\begin{align}</b> environments, etc, this should be easy, provided there are none of these 
     "display-creating" environments contained within each other. I think we should be okay on this front - <b>\begin{alignat}</b>
     and <b>\begin{split}</b>, for example, need to be within display-mode already. Similarly, the plain tex 
@@ -51,10 +50,14 @@ which won't be pretty, so I'll probably stick it in a separate file eventually.<
     This is straightforward, but the interesting part here is that I don't want to have to write out these two lines for
     each of <b>align</b>, <b>align*</b>, <b>equation</b>, <b>equation*</b>, and what have you - especially as this list
     may grow over time. Therefore, I would like to be able to loop over a list of such terms. I have not yet figured out how
-    to do this.<br><br>
+    to do this.<br>
+    <it>(TO DO: Figure out how to loop over a number of terms in a list in vim.)<br>
+   <it>(TO DO: Want to avoid diagrams, such as xymatrix.) </it><br>
+    <it>(TO DO: Tweak to avoid icky hboxes etc, which contain "math" within "math".)</it>
+    <br><br>
     
     <h3> Reduce all the parens within display mode to <b>\left</b></h3>
-      Going to use sed here, because doing it within vim would require multiple iterations.
+      Going to use sed here, because I think doing it within vim would require multiple iterations.
       To use sed to replace bigl and bigr etc with left and right, use
       <br><br><font size="4">
         <code>7.  :! sed -i.bak '/FHBEGINCOMMENT/,/FHENDCOMMENT/s/\(\\bigl(\|\\Bigl(\|\\biggl(\|\\Biggl(\|\\big(\)/\\left(/g' main.tex^ML^M</code><br>
@@ -62,7 +65,17 @@ which won't be pretty, so I'll probably stick it in a separate file eventually.<
       </font><br><br>
       
       <h3>Make a list of things that need various sized parens</h3><br><br>
-        
+    Small selection given here:
+    <h4>Bigg</h4><br>
+    <h4>bigg</h4><br>
+    sum, int, prod<br>
+    <h4>Big</h4><br>
+    mfrac, bigcup<br>
+    <h4>big</h4><br>
+    <br>
+    <it>(TO DO: Will also want to be able to amend this list individually per paper, for macros etc.) Another reason the for loop
+      for simplification becomes essential.
+    
       <h3>Search through the displays and find lefts and rights and check the contents and fill in bigls etc, where necessary,
           starting with the largest.</h3> 
     Again, there is a large list of these to account for, so I'd better get the fecking
@@ -71,7 +84,8 @@ which won't be pretty, so I'll probably stick it in a separate file eventually.<
         <code>s/%FHBEGINDISPLAY\(\_.\{-}\)\\left(\(\_.\{-}\)\\sum\(\_.\{-}\)\right)\(\_.\{-}\)%FHENDDISPLAY/\1\\biggl(\2\\sum\3\biggr)\4%FHENDDISPLAY^M</code>
       </font><br><br>
           (with \\sum being replaced by everything needing biggs, etc.)
-
+      <it>(TO DO: For list to loop over all of these.)</it><br>
+      
     <h3> Tidy up </h3>
     Remove any crap I've added in.
   </body>
