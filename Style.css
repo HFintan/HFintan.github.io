@@ -80,8 +80,8 @@ h1 {
    line-height:40px;
 }
 #nav ul li a:hover {
-   background:black;
-   color:#00FF00;
+   background:#00FF00;
+   color:black;
 }
 #page {
 
