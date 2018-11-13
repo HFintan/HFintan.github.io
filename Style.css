@@ -52,7 +52,7 @@ h1 {
 	font-size:14px;
 }
 #nav {
-      background:#222;
+      background:black;
    overflow:hidden;
    height: 40px;
 }
@@ -75,13 +75,13 @@ h1 {
    display:block;
    margin:0;
    padding:0px 10px;
-   color:#fff;
+   color:#00FF00;
    text-decoration:none;
    line-height:40px;
 }
 #nav ul li a:hover {
-   background:#FFF;
-   color:#333;
+   background:black;
+   color:#00FF00;
 }
 #page {
 
