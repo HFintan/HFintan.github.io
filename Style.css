@@ -27,7 +27,7 @@ body {
 
 #container {
 	width:960px;
-	margin:none;
+	margin:auto;
 	background-color:black;	
 	background-color:black ;
 	font-size:14px;
@@ -36,8 +36,8 @@ body {
 #ucb {
 }
 #banner {
-	color: electricGreen;
-	color: green;
+	color: #00FF00;
+	color: #00FF00;
 	background-color: black;
 }
 h1 {
