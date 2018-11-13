@@ -15,7 +15,7 @@ a.current:link, a.current:visited {
 img { border:none; }
 
 body {
-	margin:0;
+	margin:20;
 	padding:0;
 
 	background-color: black;
