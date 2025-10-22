@@ -1,10 +1,10 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Research: Compressed Sensing</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<meta https-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Research: Compressed Sensing</title>
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta https-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Fintan Hegarty</title>
 	<link href="Style.css" rel="stylesheet" media="screen" />
 	<script type="text/JavaScript" src="curvycorners.js"></script>
@@ -43,7 +43,7 @@ However, for <i>k</i>-sparse vectors <i>v</i> (ie. <i>v</i> contains at most <i>
 of &#934;', then we say that &#934;' is a <i>sparsification</i> of &#934;.<br>
 The density of &#934;, &#948;(&#934;) is the proportion of non-zero entries which &#934; contains.<br> 
 <br>
-In my paper with Ó Catháin and Zhao, <a href="http://arxiv.org/abs/1506.03523">Sparsification of Matrices and Compressed Sensing</a>, we analyse the effect of the sparsification of the sensing matrix &#934; on its recovery capabilities.
+In my paper with Ó Catháin and Zhao, <a href="https://arxiv.org/abs/1506.03523">Sparsification of Matrices and Compressed Sensing</a>, we analyse the effect of the sparsification of the sensing matrix &#934; on its recovery capabilities.
 <br>
 The graph below is similar to the motivational figure from our paper. It shows that the sparsified matrices (&delta;=0.05 and 0.1) outperform the original matrix (&delta;=1). <br>
 We also include the interesting section of the table which was used to generate the graph. The bolded entries indicate where at most 2% of the 500 recovery attempts failed.
@@ -84,14 +84,14 @@ We also include the interesting section of the table which was used to generate 
 </TABLE>
 
 
-The Matlab files used to generate the relevant data and these graphs can be found <a href="http://www.fintanhegarty.com/matlab_files">here</a>, along with further information on
+The Matlab files used to generate the relevant data and these graphs can be found <a href="https://www.fintanhegarty.com/matlab_files">here</a>, along with further information on
 parameters etc.
 <br><br><br>
 
 <h3>Algorithms</h3>
-We considered three different algorithms in the paper - the standard linear programming solver in Matlab, <a href="http://uk.mathworks.com/help/optim/ug/linprog.html">linprog</a>,; 
-Orthogonal Matching Pursuit (OMP) - see <a href="http://users.cms.caltech.edu/~jtropp/papers/TG07-Signal-Recovery.pdf">Tropp and Gilbert's paper</a>,
-and <a href="http://arxiv.org/pdf/0803.2392v2.pdf">Needell and Tropp's</a> CoSaMP.
+We considered three different algorithms in the paper - the standard linear programming solver in Matlab, <a href="https://uk.mathworks.com/help/optim/ug/linprog.html">linprog</a>,; 
+Orthogonal Matching Pursuit (OMP) - see <a href="https://users.cms.caltech.edu/~jtropp/papers/TG07-Signal-Recovery.pdf">Tropp and Gilbert's paper</a>,
+and <a href="https://arxiv.org/pdf/0803.2392v2.pdf">Needell and Tropp's</a> CoSaMP.
 <br>
 Both OMP and CoSaMP take a priori knowledge of the sparsity of the vector which is to be recovered, and are significantly faster
 than linprog. All three, however, exhibit some degree of improvement in recovery for sparsified sensing matrices.
