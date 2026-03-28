@@ -1,311 +1,68 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="https://www.w3.org/1999/xhtml">
-<meta https-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Research: Compressed Sensing</title>
-
-<head>
-	<meta https-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Fintan Hegarty</title>
-	<link href="Style.css" rel="stylesheet" media="screen" />
-	<script type="text/JavaScript" src="curvycorners.js"></script>
+<html xmlns="https://www.w3.org/1999/xhtml"><head>
+<meta https-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Baile</title>
+<link href="Style.css" rel="stylesheet" media="screen" />
 </head>
-
 <body>
 <div id="container">
 <div id="wrapper">
 <div id="banner">
 <h1>Fintan Hegarty</h1>
-<p>Research: Compressed Sensing<br />
-<p><br />
-</p>
 </div>
-<div id="nav">
-<ul>
-<li><a href="index.html"><big>Home</big></a></li>
-<li><a href="research.html"><big>Research</big></a></li>
-<li><a href="teaching.html"><big>Teaching</big></a></li>
-<!--<li><a href="stop.html"><big> Eile </big></a></li>-->
-<!--<li><a href="index.html"><big>English version</big></a></li>-->
-</ul>
-</div>   
+	<div id="nav">
+    <ul>
+        <li style="float:right;">
+            <a href="index-ga.html">English</a>
+        </li>
+    </ul>
+</div>
 <div id="page">
 <div id="content">
+	
+<div style="width: 250px; height: 250px; float:right; font-size:80%; text-align:center;">
+	<img style="width: 200px; height: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Truncatedoctahedron.gif" title="Truncated octahedron" id="truncated_octahedron" style=padding-bottom:-2em;"/>
+<p>(Seo peirmiútaihéadrán. Bhí mo PhD bunaithe ar phacáiste bogearraí le haghaidh anailís íomhá a chruthú, a bhain úsáid as peirmiútaihéadráin in áit picteilíní/toirtilíní ciúbacha.</p>
+</div>
+<p>
+	<b>Caveat lector:</b> <i>Tá an suíomh seo théis a bheith dímhaoin ar feadh píosa fada, agus tá uasdátú a dhéanamh air de réir a chéile.</i>
+<p>
+<p>
+</p>
+<br>
+<b>2025-: Clárbhainisteoir ar thogra náisiúnta um STEM agus Gaeilge a chur chun cinn, maoinithe ag Taighde Éireann.</b>
+<br>
+<b>2023-: Léachtóir in Oideachas STEM trí Ghaeilge, Coláiste na hEolaíochta agus na hInnealtóireachta, Ollscoil na Gaillimhe.</b> 
+<br><br>
+2025: Taighdeir Iardhochtúireachta ar tionscnamh feabhsaithe comhionannas inscne, maoinithe ag an HEA.
+2022-2023: Léachtóir leis an Ionad Rochtana agus Scoil an Mhata, Ollscoil na Gaillimhe.<br>
+2022: Bainisteoir an Ionad Tacaíochta Matamaitice, Ollscoil na Gaillimhe. <br>
+2020-2023: Bainisteoir Táirgthe, Mathematical Sciences Publishers, University of California, Berkeley.<br> 
+2016-2020: Eagarthóir, Mathematical Sciences Publishers, University of California, Berkeley.<br>
+2016: Léachtóir, Ollscoil Luimnigh.<br>
+2013-2015: Comhalta Taighde Iardhochtúireachta, Optamú Teoiriciúil agus Ríomhaireachtúil, University of Birmingham, maoinithe ag .<br>
+2008-2012: PhD sa Mhatamaitic Ríomhaireachtúil, Ollscoil na Gaillimhe, maoinithe ag SFI.<br><br><br>
+		
+<h3>Contact</h3>
+fintan[dot]hegarty[at]universityofgalway[dot]ie
+<br>
 
-The idea behind compressed sensing concerns the compression of a vector x into a smaller vector y=Ax via an m x n matrix A where
-<br> m << n , and the subsequent recovery of x from y and A. This system is underdetermined - there are infinitely many solutions
-<br> to y=Ax. However, for k-sparse vectors x (ie. x contains at most k non-zero entries) it turns out that we can solve y=Ax
-<br> if A has certain properties, as detailed by Candés, Donoho, and Tao.
+<h4>Buíochas le:</h4>
+Taighde Éireann (2026-2027) <br>
+HEA (2025) <br>
+Ciste Straitéiseach Ollscoil na Gaillimhe (2023-2025)<br> 
+SATLE (2021)<br>
+EPSRC (2013-2015)<br>
+SFI (2008-2012)<br>
+	
+<!--<h3>Funding</h3>
 <br>
-<br>
-In my paper with Ó Catháin and Zhao, we analyse the effect of the sparsification of A on its recovery capabilities. The matrix
-<br> A is said to be sparsified by p% if we randomly assign p% of its non-zero entries to have value 0. Unsurprisingly, computations
-<br> for sparsified matrices are much faster, but, perhaps surprisingly, the recovery with sparisified matrices all seems to offer
-<br> an improvement.
-<br>
-<br>
-In the graph below, we illustrate the relative recovery of matrices under varying levels of sparsification. <br>
-The table below provides the interesting section of the data which was used to generate the graph.
-
-<img src="https://cloud.githubusercontent.com/assets/4904401/6500414/549da1b0-c303-11e4-979b-6977018992f2.png" height="300"/>
-<br>
-<style type="text/css">
-	table.tableizer-table {
-	border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-} 
-.tableizer-table td {
-	padding: 4px;
-	margin: 3px;
-	border: 1px solid #ccc;
-}
-.tableizer-table th {
-	background-color: #104E8B; 
-	color: #FFF;
-	font-weight: bold;
-}
-</style><table class="tableizer-table">
-Fixed rows, varying ratio.<br>
-Algorithm: Linprog<br>
-Iterations: 500<br>
-Error margin: 10^-6<br>
-Vector entries and matrix entries: Normal distribution<br>
-(Note - normalization and absolute value during simulation)<br>
-<tr class="tableizer-firstrow"><th>k</th><th>Sp0</th><th>Sp30</th><th>Sp60</th><th>Sp90</th><th>Sp95</th></tr>
- <tr><td>Matrix size: 100x200</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>45</td><td>491</td><td>497</td><td>494</td><td>497</td><td>498</td></tr>
- <tr><td>46</td><td>487</td><td>489</td><td>489</td><td>496</td><td>496</td></tr>
- <tr><td>47</td><td>485</td><td>479</td><td>486</td><td>493</td><td>493</td></tr>
- <tr><td>48</td><td>477</td><td>480</td><td>479</td><td>485</td><td>482</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x225</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>41</td><td>496</td><td>495</td><td>496</td><td>498</td><td>496</td></tr>
- <tr><td>42</td><td>486</td><td>490</td><td>489</td><td>496</td><td>499</td></tr>
- <tr><td>43</td><td>482</td><td>481</td><td>480</td><td>494</td><td>495</td></tr>
- <tr><td>44</td><td>473</td><td>457</td><td>480</td><td>487</td><td>489</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x250</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>38</td><td>493</td><td>493</td><td>497</td><td>499</td><td>499</td></tr>
- <tr><td>39</td><td>481</td><td>488</td><td>488</td><td>498</td><td>496</td></tr>
- <tr><td>40</td><td>483</td><td>484</td><td>485</td><td>494</td><td>492</td></tr>
- <tr><td>41</td><td>469</td><td>467</td><td>470</td><td>488</td><td>488</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x275</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>35</td><td>492</td><td>497</td><td>494</td><td>500</td><td>499</td></tr>
- <tr><td>36</td><td>488</td><td>495</td><td>493</td><td>497</td><td>499</td></tr>
- <tr><td>37</td><td>483</td><td>487</td><td>488</td><td>495</td><td>498</td></tr>
- <tr><td>38</td><td>478</td><td>479</td><td>480</td><td>496</td><td>490</td></tr>
- <tr><td>39</td><td>467</td><td>457</td><td>475</td><td>486</td><td>489</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x300</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>34</td><td>494</td><td>492</td><td>494</td><td>500</td><td>499</td></tr>
- <tr><td>35</td><td>489</td><td>490</td><td>486</td><td>497</td><td>500</td></tr>
- <tr><td>36</td><td>480</td><td>478</td><td>475</td><td>492</td><td>495</td></tr>
- <tr><td>37</td><td>460</td><td>464</td><td>465</td><td>490</td><td>487</td></tr>
- <tr><td>38</td><td>450</td><td>441</td><td>456</td><td>484</td><td>474</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x325</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>32</td><td>494</td><td>491</td><td>493</td><td>500</td><td>499</td></tr>
- <tr><td>33</td><td>480</td><td>489</td><td>489</td><td>498</td><td>498</td></tr>
- <tr><td>34</td><td>464</td><td>485</td><td>480</td><td>497</td><td>495</td></tr>
- <tr><td>35</td><td>462</td><td>473</td><td>468</td><td>489</td><td>491</td></tr>
- <tr><td>36</td><td>439</td><td>453</td><td>458</td><td>484</td><td>482</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x350</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>31</td><td>491</td><td>493</td><td>492</td><td>499</td><td>497</td></tr>
- <tr><td>32</td><td>479</td><td>484</td><td>490</td><td>499</td><td>496</td></tr>
- <tr><td>33</td><td>467</td><td>473</td><td>470</td><td>495</td><td>487</td></tr>
- <tr><td>34</td><td>461</td><td>455</td><td>466</td><td>492</td><td>488</td></tr>
- <tr><td>35</td><td>441</td><td>429</td><td>440</td><td>485</td><td>467</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x375</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>30</td><td>490</td><td>492</td><td>495</td><td>498</td><td>497</td></tr>
- <tr><td>31</td><td>481</td><td>477</td><td>482</td><td>499</td><td>497</td></tr>
- <tr><td>32</td><td>483</td><td>472</td><td>470</td><td>494</td><td>495</td></tr>
- <tr><td>33</td><td>449</td><td>457</td><td>449</td><td>486</td><td>477</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x400</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>29</td><td>491</td><td>493</td><td>495</td><td>500</td><td>497</td></tr>
- <tr><td>30</td><td>474</td><td>480</td><td>483</td><td>498</td><td>494</td></tr>
- <tr><td>31</td><td>465</td><td>473</td><td>474</td><td>497</td><td>494</td></tr>
- <tr><td>32</td><td>465</td><td>454</td><td>468</td><td>489</td><td>482</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x425</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>27</td><td>495</td><td>493</td><td>494</td><td>498</td><td>499</td></tr>
- <tr><td>28</td><td>494</td><td>489</td><td>493</td><td>499</td><td>497</td></tr>
- <tr><td>29</td><td>480</td><td>476</td><td>484</td><td>497</td><td>494</td></tr>
- <tr><td>30</td><td>475</td><td>463</td><td>471</td><td>494</td><td>490</td></tr>
- <tr><td>31</td><td>442</td><td>440</td><td>454</td><td>489</td><td>486</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x450</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>25</td><td>499</td><td>499</td><td>497</td><td>500</td><td>500</td></tr>
- <tr><td>26</td><td>494</td><td>499</td><td>496</td><td>498</td><td>499</td></tr>
- <tr><td>27</td><td>483</td><td>484</td><td>491</td><td>498</td><td>500</td></tr>
- <tr><td>28</td><td>476</td><td>484</td><td>487</td><td>498</td><td>496</td></tr>
- <tr><td>29</td><td>464</td><td>464</td><td>480</td><td>495</td><td>492</td></tr>
- <tr><td>30</td><td>437</td><td>448</td><td>461</td><td>493</td><td>488</td></tr>
- <tr><td>31</td><td>396</td><td>412</td><td>436</td><td>483</td><td>457</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x475</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>26</td><td>494</td><td>492</td><td>491</td><td>500</td><td>500</td></tr>
- <tr><td>27</td><td>487</td><td>492</td><td>487</td><td>499</td><td>497</td></tr>
- <tr><td>28</td><td>467</td><td>479</td><td>471</td><td>495</td><td>491</td></tr>
- <tr><td>29</td><td>450</td><td>442</td><td>452</td><td>492</td><td>482</td></tr>
- <tr><td>30</td><td>425</td><td>429</td><td>425</td><td>483</td><td>468</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x500</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>25</td><td>495</td><td>497</td><td>492</td><td>500</td><td>499</td></tr>
- <tr><td>26</td><td>490</td><td>487</td><td>492</td><td>499</td><td>496</td></tr>
- <tr><td>27</td><td>484</td><td>474</td><td>480</td><td>500</td><td>494</td></tr>
- <tr><td>28</td><td>461</td><td>454</td><td>458</td><td>494</td><td>490</td></tr>
- <tr><td>29</td><td>441</td><td>433</td><td>446</td><td>491</td><td>476</td></tr>
- <tr><td>30</td><td>402</td><td>410</td><td>396</td><td>478</td><td>453</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x525</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>24</td><td>495</td><td>495</td><td>495</td><td>499</td><td>500</td></tr>
- <tr><td>25</td><td>487</td><td>496</td><td>494</td><td>498</td><td>499</td></tr>
- <tr><td>26</td><td>480</td><td>490</td><td>488</td><td>499</td><td>497</td></tr>
- <tr><td>27</td><td>464</td><td>462</td><td>475</td><td>498</td><td>489</td></tr>
- <tr><td>28</td><td>443</td><td>438</td><td>447</td><td>493</td><td>479</td></tr>
- <tr><td>29</td><td>408</td><td>402</td><td>428</td><td>487</td><td>468</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x550</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>24</td><td>490</td><td>495</td><td>491</td><td>500</td><td>499</td></tr>
- <tr><td>25</td><td>488</td><td>489</td><td>484</td><td>495</td><td>500</td></tr>
- <tr><td>26</td><td>470</td><td>469</td><td>479</td><td>497</td><td>493</td></tr>
- <tr><td>27</td><td>446</td><td>458</td><td>464</td><td>488</td><td>492</td></tr>
- <tr><td>28</td><td>438</td><td>411</td><td>435</td><td>480</td><td>469</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x575</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>23</td><td>493</td><td>497</td><td>498</td><td>500</td><td>500</td></tr>
- <tr><td>24</td><td>492</td><td>487</td><td>495</td><td>494</td><td>500</td></tr>
- <tr><td>25</td><td>483</td><td>480</td><td>489</td><td>499</td><td>495</td></tr>
- <tr><td>26</td><td>462</td><td>451</td><td>464</td><td>496</td><td>486</td></tr>
- <tr><td>27</td><td>432</td><td>437</td><td>446</td><td>493</td><td>477</td></tr>
- <tr><td>28</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>418</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x600</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>22</td><td>497</td><td>497</td><td>498</td><td>500</td><td>500</td></tr>
- <tr><td>23</td><td>489</td><td>495</td><td>498</td><td>500</td><td>499</td></tr>
- <tr><td>24</td><td>485</td><td>477</td><td>482</td><td>500</td><td>496</td></tr>
- <tr><td>25</td><td>470</td><td>466</td><td>480</td><td>498</td><td>494</td></tr>
- <tr><td>26</td><td>441</td><td>441</td><td>451</td><td>499</td><td>486</td></tr>
- <tr><td>27</td><td>412</td><td>427</td><td>430</td><td>490</td><td>481</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x625</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>22</td><td>495</td><td>498</td><td>499</td><td>500</td><td>500</td></tr>
- <tr><td>23</td><td>484</td><td>492</td><td>495</td><td>498</td><td>499</td></tr>
- <tr><td>24</td><td>480</td><td>487</td><td>480</td><td>499</td><td>498</td></tr>
- <tr><td>25</td><td>457</td><td>467</td><td>474</td><td>498</td><td>496</td></tr>
- <tr><td>26</td><td>430</td><td>431</td><td>450</td><td>489</td><td>480</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x650</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>22</td><td>494</td><td>494</td><td>498</td><td>500</td><td>500</td></tr>
- <tr><td>23</td><td>485</td><td>487</td><td>489</td><td>499</td><td>496</td></tr>
- <tr><td>24</td><td>477</td><td>475</td><td>484</td><td>498</td><td>497</td></tr>
- <tr><td>25</td><td>448</td><td>443</td><td>469</td><td>496</td><td>495</td></tr>
- <tr><td>26</td><td>420</td><td>406</td><td>434</td><td>490</td><td>476</td></tr>
- <tr><td>27</td><td>377</td><td>389</td><td>384</td><td>478</td><td>438</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x675</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>22</td><td>494</td><td>490</td><td>491</td><td>499</td><td>498</td></tr>
- <tr><td>23</td><td>478</td><td>480</td><td>475</td><td>499</td><td>494</td></tr>
- <tr><td>24</td><td>467</td><td>468</td><td>475</td><td>499</td><td>494</td></tr>
- <tr><td>25</td><td>434</td><td>430</td><td>449</td><td>492</td><td>483</td></tr>
- <tr><td>26</td><td>403</td><td>411</td><td>419</td><td>483</td><td>468</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x700</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>21</td><td>496</td><td>494</td><td>499</td><td>500</td><td>499</td></tr>
- <tr><td>22</td><td>485</td><td>491</td><td>493</td><td>500</td><td>498</td></tr>
- <tr><td>23</td><td>474</td><td>483</td><td>481</td><td>499</td><td>495</td></tr>
- <tr><td>24</td><td>459</td><td>452</td><td>463</td><td>497</td><td>493</td></tr>
- <tr><td>25</td><td>402</td><td>429</td><td>454</td><td>493</td><td>480</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x725</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>21</td><td>492</td><td>497</td><td>496</td><td>500</td><td>500</td></tr>
- <tr><td>22</td><td>484</td><td>488</td><td>490</td><td>499</td><td>499</td></tr>
- <tr><td>23</td><td>476</td><td>469</td><td>482</td><td>498</td><td>493</td></tr>
- <tr><td>24</td><td>444</td><td>446</td><td>456</td><td>499</td><td>481</td></tr>
- <tr><td>25</td><td>405</td><td>413</td><td>432</td><td>483</td><td>459</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x750</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>21</td><td>495</td><td>492</td><td>496</td><td>500</td><td>498</td></tr>
- <tr><td>22</td><td>472</td><td>475</td><td>490</td><td>499</td><td>496</td></tr>
- <tr><td>23</td><td>466</td><td>466</td><td>479</td><td>499</td><td>498</td></tr>
- <tr><td>24</td><td>421</td><td>429</td><td>454</td><td>493</td><td>482</td></tr>
- <tr><td>25</td><td>418</td><td>398</td><td>419</td><td>481</td><td>459</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x775</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>21</td><td>491</td><td>496</td><td>497</td><td>500</td><td>500</td></tr>
- <tr><td>22</td><td>490</td><td>486</td><td>488</td><td>498</td><td>498</td></tr>
- <tr><td>23</td><td>484</td><td>&nbsp;</td><td>&nbsp;</td><td>499</td><td>497</td></tr>
- <tr><td>24</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>495</td><td>491</td></tr>
- <tr><td>25</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>491</td><td>470</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x800</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>20</td><td>494</td><td>494</td><td>497</td><td>500</td><td>499</td></tr>
- <tr><td>21</td><td>484</td><td>486</td><td>490</td><td>499</td><td>499</td></tr>
- <tr><td>22</td><td>469</td><td>463</td><td>481</td><td>498</td><td>492</td></tr>
- <tr><td>23</td><td>444</td><td>441</td><td>469</td><td>492</td><td>486</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x825</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>20</td><td>495</td><td>493</td><td>494</td><td>500</td><td>499</td></tr>
- <tr><td>21</td><td>487</td><td>490</td><td>484</td><td>500</td><td>496</td></tr>
- <tr><td>22</td><td>465</td><td>472</td><td>464</td><td>499</td><td>497</td></tr>
- <tr><td>23</td><td>442</td><td>431</td><td>457</td><td>495</td><td>483</td></tr>
- <tr><td>24</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>491</td><td>&nbsp;</td></tr>
- <tr><td>25</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>479</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x850</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>19</td><td>499</td><td>498</td><td>500</td><td>500</td><td>499</td></tr>
- <tr><td>20</td><td>489</td><td>494</td><td>493</td><td>499</td><td>499</td></tr>
- <tr><td>21</td><td>481</td><td>481</td><td>484</td><td>500</td><td>499</td></tr>
- <tr><td>22</td><td>453</td><td>452</td><td>469</td><td>498</td><td>493</td></tr>
- <tr><td>23</td><td>406</td><td>429</td><td>444</td><td>491</td><td>476</td></tr>
- <tr><td>24</td><td>375</td><td>392</td><td>408</td><td>479</td><td>445</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x875</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>19</td><td>496</td><td>495</td><td>496</td><td>499</td><td>500</td></tr>
- <tr><td>20</td><td>477</td><td>490</td><td>491</td><td>500</td><td>499</td></tr>
- <tr><td>21</td><td>473</td><td>479</td><td>481</td><td>498</td><td>496</td></tr>
- <tr><td>22</td><td>454</td><td>444</td><td>460</td><td>496</td><td>486</td></tr>
- <tr><td>23</td><td>420</td><td>403</td><td>435</td><td>488</td><td>474</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x900</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>19</td><td>496</td><td>499</td><td>491</td><td>500</td><td>500</td></tr>
- <tr><td>20</td><td>486</td><td>479</td><td>488</td><td>499</td><td>495</td></tr>
- <tr><td>21</td><td>476</td><td>480</td><td>479</td><td>499</td><td>488</td></tr>
- <tr><td>22</td><td>444</td><td>446</td><td>460</td><td>496</td><td>481</td></tr>
- <tr><td>23</td><td>405</td><td>402</td><td>426</td><td>482</td><td>451</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x925</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>19</td><td>493</td><td>494</td><td>496</td><td>500</td><td>499</td></tr>
- <tr><td>20</td><td>481</td><td>481</td><td>483</td><td>500</td><td>500</td></tr>
- <tr><td>21</td><td>458</td><td>458</td><td>478</td><td>497</td><td>494</td></tr>
- <tr><td>22</td><td>435</td><td>430</td><td>449</td><td>497</td><td>477</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>484</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x950</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>Sp0</td><td>Sp30</td><td>Sp60</td><td>Sp90</td><td>Sp95</td></tr>
- <tr><td>19</td><td>492</td><td>490</td><td>496</td><td>500</td><td>500</td></tr>
- <tr><td>20</td><td>478</td><td>480</td><td>492</td><td>500</td><td>498</td></tr>
- <tr><td>21</td><td>457</td><td>456</td><td>479</td><td>498</td><td>482</td></tr>
- <tr><td>22</td><td>416</td><td>427</td><td>453</td><td>491</td><td>470</td></tr>
- <tr><td>23</td><td>377</td><td>396</td><td>393</td><td>487</td><td>435</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x975</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>18</td><td>497</td><td>495</td><td>497</td><td>500</td><td>500</td></tr>
- <tr><td>19</td><td>487</td><td>490</td><td>493</td><td>500</td><td>499</td></tr>
- <tr><td>20</td><td>479</td><td>483</td><td>481</td><td>499</td><td>496</td></tr>
- <tr><td>21</td><td>468</td><td>448</td><td>471</td><td>499</td><td>485</td></tr>
- <tr><td>22</td><td>419</td><td>416</td><td>419</td><td>497</td><td>459</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>485</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Matrix size: 100x1000</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>18</td><td>499</td><td>490</td><td>497</td><td>500</td><td>499</td></tr>
- <tr><td>19</td><td>489</td><td>488</td><td>493</td><td>498</td><td>499</td></tr>
- <tr><td>20</td><td>470</td><td>473</td><td>471</td><td>499</td><td>498</td></tr>
- <tr><td>21</td><td>437</td><td>441</td><td>466</td><td>493</td><td>486</td></tr>
- <tr><td>22</td><td>386</td><td>409</td><td>425</td><td>486</td><td>460</td></tr>
-</table>
+Currently partially supported by a <i>Strategic Alignment of Teaching and Learning Enhancement</i> bursary from the Technological University of the Shannon.
+<br><br>
+I am grateful to Science Foundation Ireland for funding my Ph.D. research, through the de Brún Centre for Computational Algebra, 
+and to the Engineering and Physical Sciences Research Council for funding my postdoctoral research. 
+I am also hugely indebted to Prof. Graham Ellis and Dr. Yunbin Zhao for their guidance.
+-->
+</div>
+</div>
 </body></html> 
-
