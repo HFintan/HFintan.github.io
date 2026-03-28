@@ -5,34 +5,27 @@
 <title>Home</title>
 <link href="Style.css" rel="stylesheet" media="screen" />
 <style>
-  /* Basic page layout */
+  /* Green/black style */
   body {
       margin: 20px;
-      padding: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      background-color: #fff;
-      color: #000;
-  }
-
-  #container {
-      max-width: 900px;
-      margin: 0 auto;
+      background-color: #ffffff;  /* keep background white */
+      color: #000000;             /* black text */
   }
 
   #banner h1 {
+      color: #006400; /* dark green */
       margin-bottom: 0.5em;
   }
 
-  #nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 20px 0;
+  #nav ul li a {
+      color: #006400; /* green links */
+      text-decoration: none;
   }
 
-  #nav ul li a {
-      text-decoration: none;
-      color: #000;
+  #nav ul li a:hover {
+      text-decoration: underline;
   }
 
   #content {
@@ -51,14 +44,14 @@
   }
 
   .socials a img {
-      width: 30px;
-      height: 30px;
+      height: 40px;  /* consistent logo size */
+      width: auto;
       margin-right: 10px;
       vertical-align: middle;
   }
 
   .socials a:hover img {
-      opacity: 0.7;
+      opacity: 0.8;
   }
 
   p {
@@ -68,14 +61,23 @@
   h3, h4 {
       margin-top: 1em;
       margin-bottom: 0.5em;
+      color: #006400; /* green headings */
   }
 
   a {
-      color: #0066cc;
+      color: #006400;
   }
 
   a:hover {
-      text-decoration: underline;
+      opacity: 0.7;
+  }
+
+  b {
+      color: #000000; /* keep bold text black for readability */
+  }
+
+  i {
+      color: #006400; /* italics green for emphasis */
   }
 </style>
 </head>
