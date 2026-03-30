@@ -5,7 +5,7 @@
 <title>Home</title>
 <link href="Style.css" rel="stylesheet" media="screen" />
 <style>
-  /* Only fixing margins and social logo size */
+  /* Only fixing margins, social logo size, and Gaeilge tab */
   body {
       margin: 20px;
       line-height: 1.6;
@@ -23,14 +23,36 @@
   }
 
   .socials a img {
-      height: 40px; /* make both logos same height */
       width: auto;  /* preserve aspect ratio */
-      margin-right: 10px;
       vertical-align: middle;
+      margin-right: 10px;
+      transition: opacity 0.2s;
+  }
+
+  /* Individual icon sizing */
+  .socials a[href*="linkedin"] img {
+      height: 28px; /* smaller for LinkedIn */
+  }
+
+  .socials a[href*="bsky"] img {
+      height: 36px; /* larger for Bluesky */
   }
 
   .socials a:hover img {
       opacity: 0.8;
+  }
+
+  /* Nav / Gaeilge tab */
+  #nav ul li a {
+      font-size: 16px;
+      padding: 8px 12px;
+      text-decoration: none;
+  }
+
+  #nav ul li a[href*="indexG"] {
+      font-size: 20px;      /* make Gaeilge tab bigger */
+      font-weight: bold;    /* emphasize */
+      padding: 10px 14px;
   }
 
   p {
